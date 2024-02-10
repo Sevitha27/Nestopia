@@ -1,3 +1,4 @@
+import '../checkout_page_a_screen/checkout_page_a_screen.dart';
 import '../pg_screen/widgets/propertylist_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
@@ -8,6 +9,7 @@ import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+
 
 // ignore_for_file: must_be_immutable
 class PgScreen extends StatelessWidget {
@@ -187,10 +189,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2021(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -251,10 +262,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2022(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -314,10 +334,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2023(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -383,10 +412,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2024(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -467,11 +505,21 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2025(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+          context,
+          AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
+
 
   /// Section Widget
   Widget _buildOneRow2(BuildContext context) {
@@ -531,10 +579,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2026(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -594,10 +651,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2027(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
@@ -658,10 +724,19 @@ class PgScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildAvailable28Nov2028(BuildContext context) {
     return CustomElevatedButton(
-        height: 28.v,
-        width: 181.h,
-        text: "Available 28 Nov 2021",
-        buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary);
+      height: 28.v,
+      width: 181.h,
+      text: "Available 28 Nov 2021",
+      buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+      onPressed: () {
+        // Navigate to a new screen on button tap
+        Navigator.pushNamed(
+            context,
+            AppRoutes.checkoutPageAScreen
+
+        );
+      },
+    );
   }
 
   /// Section Widget
