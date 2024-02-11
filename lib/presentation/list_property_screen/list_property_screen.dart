@@ -188,7 +188,7 @@ class ListPropertyScreen extends StatelessWidget {
                               child: Container(
                                   width: 298.h,
                                   margin:
-                                      EdgeInsets.only(left: 16.h, right: 60.h),
+                                  EdgeInsets.only(left: 16.h, right: 60.h),
                                   child: Text(
                                       "Thank you for your question! This depend on the home owner.You can contact the respective person regarding this query.",
                                       maxLines: 3,
@@ -202,43 +202,43 @@ class ListPropertyScreen extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "What if the home owner ghosts me?")),
+                                  "What if the home owner ghosts me?")),
                           SizedBox(height: 19.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "What if i do not like the home when i see it?")),
+                                  "What if i do not like the home when i see it?")),
                           SizedBox(height: 19.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "Can i get refund for months i dont stay?")),
+                                  "Can i get refund for months i dont stay?")),
                           SizedBox(height: 15.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "How to contact the roommate if phone no not working?")),
+                                  "How to contact the roommate if phone no not working?")),
                           SizedBox(height: 15.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "I need to find apartments only,help.")),
+                                  "I need to find apartments only,help.")),
                           SizedBox(height: 15.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "How to stop paying in cash to landlord?")),
+                                  "How to stop paying in cash to landlord?")),
                           SizedBox(height: 19.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText:
-                                      "Can i not pay rent if i decide to not move in?")),
+                                  "Can i not pay rent if i decide to not move in?")),
                           SizedBox(height: 19.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
@@ -354,7 +354,7 @@ class ListPropertyScreen extends StatelessWidget {
               child: Container(
                   margin: EdgeInsets.only(left: 16.h, top: 20.v, right: 16.h),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 20.h, vertical: 30.v),
+                  EdgeInsets.symmetric(horizontal: 20.h, vertical: 30.v),
                   decoration: AppDecoration.outlineBlack.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder30),
                   child: Column(
@@ -388,10 +388,10 @@ class ListPropertyScreen extends StatelessWidget {
                         CustomDropDown(
                             icon: Container(
                                 margin:
-                                    EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
+                                EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
                                 child: CustomImageView(
                                     imagePath:
-                                        ImageConstant.imgEvaarrowdownfill,
+                                    ImageConstant.imgEvaarrowdownfill,
                                     height: 20.adaptSize,
                                     width: 20.adaptSize)),
                             hintText: "Area *",
@@ -400,16 +400,16 @@ class ListPropertyScreen extends StatelessWidget {
                             borderDecoration: DropDownStyleHelper.fillOnPrimary,
                             filled: true,
                             fillColor:
-                                theme.colorScheme.onPrimary.withOpacity(1),
+                            theme.colorScheme.onPrimary.withOpacity(1),
                             onChanged: (value) {}),
                         SizedBox(height: 16.v),
                         CustomDropDown(
                             icon: Container(
                                 margin:
-                                    EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
+                                EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
                                 child: CustomImageView(
                                     imagePath:
-                                        ImageConstant.imgEvaarrowdownfill,
+                                    ImageConstant.imgEvaarrowdownfill,
                                     height: 20.adaptSize,
                                     width: 20.adaptSize)),
                             hintText: "# of bedrooms *",
@@ -418,7 +418,7 @@ class ListPropertyScreen extends StatelessWidget {
                             borderDecoration: DropDownStyleHelper.fillOnPrimary,
                             filled: true,
                             fillColor:
-                                theme.colorScheme.onPrimary.withOpacity(1),
+                            theme.colorScheme.onPrimary.withOpacity(1),
                             onChanged: (value) {}),
                         SizedBox(height: 32.v),
                         _buildSubmit(context)
@@ -635,7 +635,7 @@ class ListPropertyScreen extends StatelessWidget {
                     Padding(
                         padding: EdgeInsets.only(left: 12.h),
                         child:
-                            Text("5% void", style: theme.textTheme.bodyLarge))
+                        Text("5% void", style: theme.textTheme.bodyLarge))
                   ])),
               SizedBox(height: 11.v),
               Padding(
@@ -725,7 +725,7 @@ class ListPropertyScreen extends StatelessWidget {
                     Padding(
                         padding: EdgeInsets.only(left: 12.h),
                         child:
-                            Text("No void", style: theme.textTheme.bodyLarge))
+                        Text("No void", style: theme.textTheme.bodyLarge))
                   ])),
               SizedBox(height: 11.v),
               Padding(
@@ -773,18 +773,18 @@ class ListPropertyScreen extends StatelessWidget {
                   child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                    SizedBox(
-                        width: 293.h,
-                        child: Text(
-                            "What is the penalty i need to pay for moving in late?",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.titleLarge!
-                                .copyWith(height: 1.20))),
-                    SizedBox(height: 5.v),
-                    Text("Thank you for your question! ",
-                        style: CustomTextStyles.bodyMediumGray900)
-                  ])),
+                        SizedBox(
+                            width: 293.h,
+                            child: Text(
+                                "What is the penalty i need to pay for moving in late?",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: theme.textTheme.titleLarge!
+                                    .copyWith(height: 1.20))),
+                        SizedBox(height: 5.v),
+                        Text("Thank you for your question! ",
+                            style: CustomTextStyles.bodyMediumGray900)
+                      ])),
               CustomImageView(
                   imagePath: ImageConstant.imgClose,
                   height: 24.v,
@@ -903,15 +903,15 @@ class ListPropertyScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
@@ -970,11 +970,11 @@ class ListPropertyScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildTitle(
-    BuildContext context, {
-    required String dynamicText,
-    required String dynamicText1,
-    required String dynamicText2,
-  }) {
+      BuildContext context, {
+        required String dynamicText,
+        required String dynamicText1,
+        required String dynamicText2,
+      }) {
     return Container(
         padding: EdgeInsets.symmetric(horizontal: 35.h, vertical: 30.v),
         decoration: AppDecoration.fillGreen
@@ -1000,9 +1000,9 @@ class ListPropertyScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildThreeRow(
-    BuildContext context, {
-    required String weeklyCleaningText,
-  }) {
+      BuildContext context, {
+        required String weeklyCleaningText,
+      }) {
     return Row(children: [
       CustomImageView(
           imagePath: ImageConstant.imgEvaCheckmarkFill,
@@ -1013,15 +1013,15 @@ class ListPropertyScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 12.h),
           child: Text(weeklyCleaningText,
               style:
-                  theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray900)))
+              theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray900)))
     ]);
   }
 
   /// Common widget
   Widget _buildSix(
-    BuildContext context, {
-    required String priceText,
-  }) {
+      BuildContext context, {
+        required String priceText,
+      }) {
     return Row(children: [
       CustomImageView(
           imagePath: ImageConstant.imgEvaCheckmarkFill,
@@ -1032,15 +1032,15 @@ class ListPropertyScreen extends StatelessWidget {
           padding: EdgeInsets.only(left: 12.h),
           child: Text(priceText,
               style:
-                  theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray900)))
+              theme.textTheme.bodyLarge!.copyWith(color: appTheme.gray900)))
     ]);
   }
 
   /// Common widget
   Widget _buildQuestion4(
-    BuildContext context, {
-    required String dynamicText,
-  }) {
+      BuildContext context, {
+        required String dynamicText,
+      }) {
     return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -1059,6 +1059,11 @@ class ListPropertyScreen extends StatelessWidget {
               width: 30.adaptSize,
               margin: EdgeInsets.only(left: 48.h, bottom: 18.v))
         ]);
+  }
+
+  /// Navigates to the homepageScreen when the action is triggered.
+  onTapCalendar(BuildContext context) {
+    Navigator.pushNamed(context, AppRoutes.homepageScreen);
   }
 
   /// Navigates to the homepageScreen when the action is triggered.
