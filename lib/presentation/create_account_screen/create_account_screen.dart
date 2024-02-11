@@ -190,6 +190,6 @@ class CreateAccountScreen extends StatelessWidget {
   }
 
   onTapCreateAccount(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.paymentMethodScreen);
+    Navigator.pushNamed(context, AppRoutes.accountCreatedScreen);
   }
 }
