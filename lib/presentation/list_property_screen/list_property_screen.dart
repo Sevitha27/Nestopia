@@ -5,7 +5,15 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
-
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class ListPropertyScreen extends StatelessWidget {
   ListPropertyScreen({Key? key}) : super(key: key);
@@ -29,7 +37,18 @@ class ListPropertyScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -1059,11 +1078,6 @@ class ListPropertyScreen extends StatelessWidget {
               width: 30.adaptSize,
               margin: EdgeInsets.only(left: 48.h, bottom: 18.v))
         ]);
-  }
-
-  /// Navigates to the homepageScreen when the action is triggered.
-  onTapCalendar(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.homepageScreen);
   }
 
   /// Navigates to the homepageScreen when the action is triggered.
