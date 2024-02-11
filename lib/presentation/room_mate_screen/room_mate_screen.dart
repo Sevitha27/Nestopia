@@ -28,7 +28,22 @@ class RoomMateScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -55,7 +70,7 @@ class RoomMateScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /*PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -70,7 +85,7 @@ class RoomMateScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildFilters(BuildContext context) {
@@ -79,83 +94,83 @@ class RoomMateScreen extends StatelessWidget {
         padding: EdgeInsets.only(left: 15.h),
         child: IntrinsicWidth(
             child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Container(
-              width: 94.h,
-              padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
-              decoration: AppDecoration.fillBlueGray
-                  .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
-              child: Text("Parking",
-                  style: CustomTextStyles.titleMediumOnPrimary)),
-          Padding(
-              padding: EdgeInsets.only(left: 12.h),
-              child: CustomDropDown(
-                  width: 143.h,
-                  icon: Container(
-                      margin: EdgeInsets.fromLTRB(10.h, 12.v, 20.h, 12.v),
-                      child: CustomImageView(
-                          imagePath: ImageConstant.imgEvaarrowdownfill,
-                          height: 20.adaptSize,
-                          width: 20.adaptSize)),
-                  hintText: "Bedrooms",
-                  items: dropdownItemList,
-                  onChanged: (value) {})),
-          Container(
-              height: 44.v,
-              width: 148.h,
-              margin: EdgeInsets.only(left: 12.h),
-              child: Stack(alignment: Alignment.centerLeft, children: [
-                Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                        height: 44.v,
-                        width: 148.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(22.h),
-                            border: Border.all(
-                                color: appTheme.blueGray700, width: 1.h)))),
-                Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                        padding: EdgeInsets.only(left: 20.h),
-                        child: Text("Bathrooms",
-                            style: CustomTextStyles.titleMediumBluegray700)))
-              ])),
-          Container(
-              width: 152.h,
-              margin: EdgeInsets.only(left: 12.h),
-              padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 12.v),
-              decoration: AppDecoration.outlineBlueGray
-                  .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
-              child: Text("Disabled access",
-                  style: CustomTextStyles.titleMediumBluegray700)),
-          Container(
-              width: 99.h,
-              margin: EdgeInsets.only(left: 12.h),
-              padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 12.v),
-              decoration: AppDecoration.outlineBlueGray
-                  .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
-              child: Text("Elevator",
-                  style: CustomTextStyles.titleMediumBluegray700)),
-          Container(
-              height: 44.v,
-              width: 124.h,
-              margin: EdgeInsets.only(left: 12.h),
-              child: Stack(alignment: Alignment.center, children: [
-                Align(
-                    alignment: Alignment.center,
-                    child: Container(
-                        height: 44.v,
-                        width: 124.h,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(22.h),
-                            border: Border.all(
-                                color: appTheme.blueGray700, width: 1.h)))),
-                Align(
-                    alignment: Alignment.center,
-                    child: Text("Dishwasher",
-                        style: CustomTextStyles.titleMediumBluegray700))
-              ]))
-        ])));
+              Container(
+                  width: 94.h,
+                  padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 10.v),
+                  decoration: AppDecoration.fillBlueGray
+                      .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
+                  child: Text("Parking",
+                      style: CustomTextStyles.titleMediumOnPrimary)),
+              Padding(
+                  padding: EdgeInsets.only(left: 12.h),
+                  child: CustomDropDown(
+                      width: 143.h,
+                      icon: Container(
+                          margin: EdgeInsets.fromLTRB(10.h, 12.v, 20.h, 12.v),
+                          child: CustomImageView(
+                              imagePath: ImageConstant.imgEvaarrowdownfill,
+                              height: 20.adaptSize,
+                              width: 20.adaptSize)),
+                      hintText: "Bedrooms",
+                      items: dropdownItemList,
+                      onChanged: (value) {})),
+              Container(
+                  height: 44.v,
+                  width: 148.h,
+                  margin: EdgeInsets.only(left: 12.h),
+                  child: Stack(alignment: Alignment.centerLeft, children: [
+                    Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                            height: 44.v,
+                            width: 148.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22.h),
+                                border: Border.all(
+                                    color: appTheme.blueGray700, width: 1.h)))),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 20.h),
+                            child: Text("Bathrooms",
+                                style: CustomTextStyles.titleMediumBluegray700)))
+                  ])),
+              Container(
+                  width: 152.h,
+                  margin: EdgeInsets.only(left: 12.h),
+                  padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 12.v),
+                  decoration: AppDecoration.outlineBlueGray
+                      .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
+                  child: Text("Disabled access",
+                      style: CustomTextStyles.titleMediumBluegray700)),
+              Container(
+                  width: 99.h,
+                  margin: EdgeInsets.only(left: 12.h),
+                  padding: EdgeInsets.symmetric(horizontal: 20.h, vertical: 12.v),
+                  decoration: AppDecoration.outlineBlueGray
+                      .copyWith(borderRadius: BorderRadiusStyle.circleBorder22),
+                  child: Text("Elevator",
+                      style: CustomTextStyles.titleMediumBluegray700)),
+              Container(
+                  height: 44.v,
+                  width: 124.h,
+                  margin: EdgeInsets.only(left: 12.h),
+                  child: Stack(alignment: Alignment.center, children: [
+                    Align(
+                        alignment: Alignment.center,
+                        child: Container(
+                            height: 44.v,
+                            width: 124.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22.h),
+                                border: Border.all(
+                                    color: appTheme.blueGray700, width: 1.h)))),
+                    Align(
+                        alignment: Alignment.center,
+                        child: Text("Dishwasher",
+                            style: CustomTextStyles.titleMediumBluegray700))
+                  ]))
+            ])));
   }
 
   /// Section Widget
@@ -163,7 +178,7 @@ class RoomMateScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
               padding: EdgeInsets.only(top: 1.v),
               child: Text("52 results for your filters",
@@ -295,7 +310,7 @@ class RoomMateScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 119.h),
                             child:
-                                Text("FAQ", style: theme.textTheme.bodyLarge))),
+                            Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -321,15 +336,15 @@ class RoomMateScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
