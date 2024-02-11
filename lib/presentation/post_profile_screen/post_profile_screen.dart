@@ -41,7 +41,7 @@ class PostProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: 5.v),
                         child: Column(children: [
                           Container(
-                              width: 267.h,
+                              width: 300.h,
                               margin: EdgeInsets.symmetric(horizontal: 53.h),
                               child: Text("Please tell us a little about you",
                                   maxLines: 2,
@@ -66,7 +66,7 @@ class PostProfileScreen extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: appTheme.blueGray50,
                                             borderRadius:
-                                                BorderRadius.circular(14.h))),
+                                            BorderRadius.circular(14.h))),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 10.h, top: 4.v, bottom: 3.v),
@@ -284,7 +284,7 @@ class PostProfileScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 119.h),
                             child:
-                                Text("FAQ", style: theme.textTheme.bodyLarge))),
+                            Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -310,15 +310,15 @@ class PostProfileScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
