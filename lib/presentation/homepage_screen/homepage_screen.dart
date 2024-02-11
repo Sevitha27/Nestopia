@@ -94,7 +94,12 @@ class HomepageScreen extends StatelessWidget {
         width: 154.h,
         text: "Create an account",
         buttonStyle: CustomButtonStyles.fillPrimaryContainer,
-        buttonTextStyle: CustomTextStyles.titleMediumBlack900);
+        buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+        onPressed: () {
+        // Navigate to the create_account_screen when the button is pressed
+        Navigator.pushNamed(context, AppRoutes.createAccountScreen);
+      },
+    );
   }
 
   /// Section Widget
