@@ -43,7 +43,22 @@ class CheckoutPageB1Screen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -87,15 +102,15 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                           horizontal: 30.h, vertical: 12.v),
                                       child: CustomImageView(
                                           imagePath:
-                                              ImageConstant.imgEvaarrowdownfill,
+                                          ImageConstant.imgEvaarrowdownfill,
                                           height: 20.adaptSize,
                                           width: 20.adaptSize)),
                                   hintText: "Select payment method",
                                   hintStyle:
-                                      CustomTextStyles.bodyLargeBluegray700,
+                                  CustomTextStyles.bodyLargeBluegray700,
                                   items: dropdownItemList,
                                   borderDecoration:
-                                      DropDownStyleHelper.fillBlueGray,
+                                  DropDownStyleHelper.fillBlueGray,
                                   filled: true,
                                   fillColor: appTheme.blueGray50,
                                   onChanged: (value) {})),
@@ -107,32 +122,32 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                   text: TextSpan(children: [
                                     TextSpan(
                                         text:
-                                            "By clicking \"Book\" below, I have read and agreed to the ",
+                                        "By clicking \"Book\" below, I have read and agreed to the ",
                                         style: theme.textTheme.bodyMedium),
                                     TextSpan(
                                         text: "key contract terms",
                                         style: CustomTextStyles
                                             .bodyMediumff064749
                                             .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline)),
+                                            decoration:
+                                            TextDecoration.underline)),
                                     TextSpan(
                                         text: ", ",
                                         style: theme.textTheme.bodyMedium!
                                             .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline)),
+                                            decoration:
+                                            TextDecoration.underline)),
                                     TextSpan(
                                         text:
-                                            "cancellation policy and apartment & building rules",
+                                        "cancellation policy and apartment & building rules",
                                         style: CustomTextStyles
                                             .bodyMediumff064749
                                             .copyWith(
-                                                decoration:
-                                                    TextDecoration.underline)),
+                                            decoration:
+                                            TextDecoration.underline)),
                                     TextSpan(
                                         text:
-                                            ", and to pay the total amount shown.",
+                                        ", and to pay the total amount shown.",
                                         style: theme.textTheme.bodyMedium)
                                   ]),
                                   textAlign: TextAlign.left)),
@@ -144,7 +159,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -159,7 +174,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildDetailsColumn(BuildContext context) {
@@ -222,15 +237,15 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                 children: [
                                   Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                             padding: EdgeInsets.only(top: 1.v),
                                             child: Column(
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                CrossAxisAlignment.start,
                                                 children: [
                                                   Text("Reserve this apaptment",
                                                       style: theme
@@ -242,10 +257,10 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                                 ])),
                                         Padding(
                                             padding:
-                                                EdgeInsets.only(bottom: 19.v),
+                                            EdgeInsets.only(bottom: 19.v),
                                             child: Text("Rs.94001.70",
                                                 style:
-                                                    theme.textTheme.bodyLarge))
+                                                theme.textTheme.bodyLarge))
                                       ]),
                                   SizedBox(height: 8.v),
                                   Text("After move-out",
@@ -253,22 +268,22 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                   SizedBox(height: 3.v),
                                   Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
                                             child: Container(
                                                 width: 245.h,
                                                 margin:
-                                                    EdgeInsets.only(top: 1.v),
+                                                EdgeInsets.only(top: 1.v),
                                                 child: Text(
                                                     "Receive your Rs.400.00 deposit back within 30 days",
                                                     maxLines: 2,
                                                     overflow:
-                                                        TextOverflow.ellipsis,
+                                                    TextOverflow.ellipsis,
                                                     style: theme
                                                         .textTheme.bodySmall!
                                                         .copyWith(
-                                                            height: 1.33)))),
+                                                        height: 1.33)))),
                                         CustomImageView(
                                             imagePath: ImageConstant
                                                 .imgEvaAlertCircleFill,
@@ -481,7 +496,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 119.h),
                             child:
-                                Text("FAQ", style: theme.textTheme.bodyLarge))),
+                            Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -507,15 +522,15 @@ class CheckoutPageB1Screen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
@@ -574,10 +589,10 @@ class CheckoutPageB1Screen extends StatelessWidget {
 
   /// Common widget
   Widget _buildMoveInColumn(
-    BuildContext context, {
-    required String moveInText,
-    required String dateText,
-  }) {
+      BuildContext context, {
+        required String moveInText,
+        required String dateText,
+      }) {
     return Column(children: [
       Align(
           alignment: Alignment.centerRight,

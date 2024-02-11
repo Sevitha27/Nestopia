@@ -2,7 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
-
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class LogInScreen extends StatelessWidget {
   LogInScreen({Key? key}) : super(key: key);
@@ -18,6 +26,18 @@ class LogInScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+            appBar: AppBar(
+
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: SizedBox(
                 width: SizeUtils.width,
                 child: SingleChildScrollView(
@@ -40,7 +60,7 @@ class LogInScreen extends StatelessWidget {
                                               left: 18.h, right: 15.h),
                                           child: Row(
                                               mainAxisAlignment:
-                                                  MainAxisAlignment.center,
+                                              MainAxisAlignment.center,
                                               children: [
                                                 Text(" Sign in with",
                                                     style: theme
@@ -72,24 +92,24 @@ class LogInScreen extends StatelessWidget {
                                           controller: emailController,
                                           hintText: "Email",
                                           textInputType:
-                                              TextInputType.emailAddress,
+                                          TextInputType.emailAddress,
                                           borderDecoration:
-                                              TextFormFieldStyleHelper
-                                                  .outlineBlack),
+                                          TextFormFieldStyleHelper
+                                              .outlineBlack),
                                       SizedBox(height: 12.v),
                                       CustomTextFormField(
                                           controller: passwordController,
                                           hintText: "Password",
                                           textInputAction: TextInputAction.done,
                                           textInputType:
-                                              TextInputType.visiblePassword,
+                                          TextInputType.visiblePassword,
                                           obscureText: true),
                                       SizedBox(height: 40.v),
                                       CustomElevatedButton(
                                           width: 103.h,
                                           text: "Login",
                                           buttonStyle:
-                                              CustomButtonStyles.fillPrimary,
+                                          CustomButtonStyles.fillPrimary,
                                           onPressed: () {
                                             onTapLogin(context);
                                           })

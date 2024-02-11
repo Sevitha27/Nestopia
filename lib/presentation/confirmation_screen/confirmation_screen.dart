@@ -13,7 +13,22 @@ class ConfirmationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(vertical: 39.v),
@@ -40,7 +55,7 @@ class ConfirmationScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /*PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -55,7 +70,7 @@ class ConfirmationScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildRedirectToHome(BuildContext context) {

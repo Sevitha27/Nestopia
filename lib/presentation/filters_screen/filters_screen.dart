@@ -14,7 +14,18 @@ class FiltersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.symmetric(horizontal: 15.h, vertical: 18.v),
@@ -50,10 +61,10 @@ class FiltersScreen extends StatelessWidget {
                                     horizontal: 6.h, vertical: 1.v),
                                 decoration: AppDecoration.fillBlueGray.copyWith(
                                     borderRadius:
-                                        BorderRadiusStyle.roundedBorder12),
+                                    BorderRadiusStyle.roundedBorder12),
                                 child: Text("V",
                                     style:
-                                        CustomTextStyles.bodyLargeOnPrimary)),
+                                    CustomTextStyles.bodyLargeOnPrimary)),
                             Padding(
                                 padding: EdgeInsets.only(left: 20.h, top: 2.v),
                                 child: Text("N",
@@ -65,7 +76,7 @@ class FiltersScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -79,7 +90,7 @@ class FiltersScreen extends StatelessWidget {
               imagePath: ImageConstant.imgMegaphone,
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ]);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildGuests(BuildContext context) {
@@ -135,7 +146,7 @@ class FiltersScreen extends StatelessWidget {
                                   },
                                   child: CustomImageView(
                                       imagePath:
-                                          ImageConstant.imgEvaMinusFill)))
+                                      ImageConstant.imgEvaMinusFill)))
                         ]),
                         SizedBox(height: 12.v),
                         Padding(
@@ -143,12 +154,12 @@ class FiltersScreen extends StatelessWidget {
                             child: Row(children: [
                               CustomImageView(
                                   imagePath:
-                                      ImageConstant.imgFluentBed24FilledGray900,
+                                  ImageConstant.imgFluentBed24FilledGray900,
                                   height: 20.adaptSize,
                                   width: 20.adaptSize),
                               Padding(
                                   padding:
-                                      EdgeInsets.only(left: 12.h, top: 2.v),
+                                  EdgeInsets.only(left: 12.h, top: 2.v),
                                   child: Text("Bedrooms:",
                                       style: theme.textTheme.bodyLarge)),
                               Spacer(),
@@ -158,20 +169,20 @@ class FiltersScreen extends StatelessWidget {
                                       horizontal: 7.h, vertical: 1.v),
                                   decoration: AppDecoration.fillBlueGray
                                       .copyWith(
-                                          borderRadius: BorderRadiusStyle
-                                              .roundedBorder12),
+                                      borderRadius: BorderRadiusStyle
+                                          .roundedBorder12),
                                   child: Text("1",
                                       style:
-                                          CustomTextStyles.bodyLargeOnPrimary)),
+                                      CustomTextStyles.bodyLargeOnPrimary)),
                               Padding(
                                   padding:
-                                      EdgeInsets.only(left: 20.h, top: 2.v),
+                                  EdgeInsets.only(left: 20.h, top: 2.v),
                                   child: Text("2",
                                       style:
-                                          CustomTextStyles.bodyLargePrimary)),
+                                      CustomTextStyles.bodyLargePrimary)),
                               Padding(
                                   padding:
-                                      EdgeInsets.only(left: 20.h, top: 2.v),
+                                  EdgeInsets.only(left: 20.h, top: 2.v),
                                   child: Text("3",
                                       style: CustomTextStyles.bodyLargePrimary))
                             ])),
@@ -218,15 +229,15 @@ class FiltersScreen extends StatelessWidget {
                                   margin: EdgeInsets.only(top: 2.v),
                                   child: Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       children: [
                                         CustomImageView(
                                             imagePath:
-                                                ImageConstant.imgFaSolidCarAlt,
+                                            ImageConstant.imgFaSolidCarAlt,
                                             height: 20.adaptSize,
                                             width: 20.adaptSize,
                                             margin:
-                                                EdgeInsets.only(bottom: 1.v)),
+                                            EdgeInsets.only(bottom: 1.v)),
                                         Text("Parking",
                                             style: CustomTextStyles
                                                 .bodyLargeBluegray700)
@@ -236,7 +247,7 @@ class FiltersScreen extends StatelessWidget {
                                   width: 24.adaptSize,
                                   padding: EdgeInsets.all(2.h),
                                   decoration:
-                                      IconButtonStyleHelper.fillBlueGray,
+                                  IconButtonStyleHelper.fillBlueGray,
                                   child: CustomImageView(
                                       imagePath: ImageConstant
                                           .imgEvaCheckmarkFillOnprimary))
@@ -293,7 +304,7 @@ class FiltersScreen extends StatelessWidget {
                             imagePath: ImageConstant.imgEvaPlusFill)),
                     Padding(
                         padding:
-                            EdgeInsets.only(left: 12.h, top: 8.v, bottom: 7.v),
+                        EdgeInsets.only(left: 12.h, top: 8.v, bottom: 7.v),
                         child: Text("1", style: theme.textTheme.titleMedium)),
                     Padding(
                         padding: EdgeInsets.only(left: 12.h),
@@ -315,7 +326,7 @@ class FiltersScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 20.v),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           CustomOutlinedButton(width: 99.h, text: "Back"),
           CustomElevatedButton(
               width: 130.h,

@@ -4,8 +4,8 @@ import 'package:sevitha_s_application2/core/app_export.dart';
 class AppNavigationScreen extends StatelessWidget {
   const AppNavigationScreen({Key? key})
       : super(
-          key: key,
-        );
+    key: key,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -212,10 +212,10 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildScreenTitle(
-    BuildContext context, {
-    required String screenTitle,
-    Function? onTapScreenTitle,
-  }) {
+      BuildContext context, {
+        required String screenTitle,
+        Function? onTapScreenTitle,
+      }) {
     return GestureDetector(
       onTap: () {
         onTapScreenTitle!.call();
@@ -258,9 +258,9 @@ class AppNavigationScreen extends StatelessWidget {
 
   /// Common click event
   void onTapScreenTitle(
-    BuildContext context,
-    String routeName,
-  ) {
+      BuildContext context,
+      String routeName,
+      ) {
     Navigator.pushNamed(context, routeName);
   }
 }

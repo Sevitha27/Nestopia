@@ -24,7 +24,22 @@ class PropertyDetailsScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -60,7 +75,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     margin: EdgeInsets.only(left: 20.h),
                                     child: Row(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.center,
+                                        MainAxisAlignment.center,
                                         children: [
                                           CustomImageView(
                                               imagePath: ImageConstant
@@ -68,10 +83,10 @@ class PropertyDetailsScreen extends StatelessWidget {
                                               height: 16.adaptSize,
                                               width: 16.adaptSize,
                                               margin:
-                                                  EdgeInsets.only(bottom: 1.v)),
+                                              EdgeInsets.only(bottom: 1.v)),
                                           Padding(
                                               padding:
-                                                  EdgeInsets.only(left: 8.h),
+                                              EdgeInsets.only(left: 8.h),
                                               child: Text("1 bath",
                                                   style: CustomTextStyles
                                                       .bodyMediumGray900))
@@ -84,7 +99,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                   text: TextSpan(children: [
                                     TextSpan(
                                         text:
-                                            "500 sq.ft | City view  |  3rd floor  |  Elevator\n",
+                                        "500 sq.ft | City view  |  3rd floor  |  Elevator\n",
                                         style: theme.textTheme.bodyMedium),
                                     TextSpan(
                                         text: "Rs. 34490 / Month ",
@@ -114,11 +129,11 @@ class PropertyDetailsScreen extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: Row(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     Column(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                         children: [
                                           Text("TV",
                                               style: theme.textTheme.bodyLarge),
@@ -128,7 +143,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                         ]),
                                     CustomImageView(
                                         imagePath:
-                                            ImageConstant.imgMdiTelevision,
+                                        ImageConstant.imgMdiTelevision,
                                         height: 32.adaptSize,
                                         width: 32.adaptSize,
                                         margin: EdgeInsets.only(
@@ -153,7 +168,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                               children: [
                                 Column(
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     children: [
                                       Text("Work desk",
                                           style: theme.textTheme.bodyLarge),
@@ -165,7 +180,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     ]),
                                 CustomImageView(
                                     imagePath:
-                                        ImageConstant.imgMdiDesktopMacDashboard,
+                                    ImageConstant.imgMdiDesktopMacDashboard,
                                     height: 32.adaptSize,
                                     width: 32.adaptSize,
                                     margin: EdgeInsets.only(
@@ -283,7 +298,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                   child: Row(children: [
                                     CustomImageView(
                                         imagePath:
-                                            ImageConstant.imgCloseBlack900,
+                                        ImageConstant.imgCloseBlack900,
                                         height: 20.adaptSize,
                                         width: 20.adaptSize,
                                         margin: EdgeInsets.only(bottom: 1.v)),
@@ -316,7 +331,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                               children: [
                                 CustomImageView(
                                     imagePath:
-                                        ImageConstant.imgEvaCloseCircleFill,
+                                    ImageConstant.imgEvaCloseCircleFill,
                                     height: 20.adaptSize,
                                     width: 20.adaptSize,
                                     margin: EdgeInsets.only(bottom: 22.v)),
@@ -359,7 +374,7 @@ class PropertyDetailsScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /*PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -374,7 +389,7 @@ class PropertyDetailsScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildFirstScreen(BuildContext context) {
@@ -565,15 +580,15 @@ class PropertyDetailsScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
@@ -630,10 +645,10 @@ class PropertyDetailsScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildPhoneRow(
-    BuildContext context, {
-    required String text,
-    required String image,
-  }) {
+      BuildContext context, {
+        required String text,
+        required String image,
+      }) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Padding(
           padding: EdgeInsets.only(top: 6.v, bottom: 5.v),

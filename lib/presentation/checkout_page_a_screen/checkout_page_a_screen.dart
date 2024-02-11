@@ -19,7 +19,22 @@ class CheckoutPageAScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -73,7 +88,7 @@ class CheckoutPageAScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -88,7 +103,7 @@ class CheckoutPageAScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildDetailsColumn(BuildContext context) {
@@ -150,15 +165,15 @@ class CheckoutPageAScreen extends StatelessWidget {
                                 children: [
                                   Row(
                                       mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
+                                      MainAxisAlignment.spaceBetween,
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Padding(
                                             padding: EdgeInsets.only(top: 1.v),
                                             child: Column(
                                                 crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
+                                                CrossAxisAlignment.start,
                                                 children: [
                                                   Text("Reserve this apaptment",
                                                       style: theme
@@ -170,10 +185,10 @@ class CheckoutPageAScreen extends StatelessWidget {
                                                 ])),
                                         Padding(
                                             padding:
-                                                EdgeInsets.only(bottom: 19.v),
+                                            EdgeInsets.only(bottom: 19.v),
                                             child: Text("Rs.34001.70",
                                                 style:
-                                                    theme.textTheme.bodyLarge))
+                                                theme.textTheme.bodyLarge))
                                       ]),
                                   SizedBox(height: 8.v),
                                   Text("After move-out",
@@ -181,22 +196,22 @@ class CheckoutPageAScreen extends StatelessWidget {
                                   SizedBox(height: 3.v),
                                   Row(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Expanded(
                                             child: Container(
                                                 width: 235.h,
                                                 margin:
-                                                    EdgeInsets.only(top: 1.v),
+                                                EdgeInsets.only(top: 1.v),
                                                 child: Text(
                                                     "Receive your Rs.4000.00 deposit back within 30 days",
                                                     maxLines: 2,
                                                     overflow:
-                                                        TextOverflow.ellipsis,
+                                                    TextOverflow.ellipsis,
                                                     style: theme
                                                         .textTheme.bodySmall!
                                                         .copyWith(
-                                                            height: 1.33)))),
+                                                        height: 1.33)))),
                                         CustomImageView(
                                             imagePath: ImageConstant
                                                 .imgEvaAlertCircleFill,
@@ -216,7 +231,7 @@ class CheckoutPageAScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Padding(
                 padding: EdgeInsets.only(top: 1.v),
@@ -237,7 +252,7 @@ class CheckoutPageAScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             Padding(
                 padding: EdgeInsets.only(top: 1.v),
@@ -325,7 +340,7 @@ class CheckoutPageAScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 119.h),
                             child:
-                                Text("FAQ", style: theme.textTheme.bodyLarge))),
+                            Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -420,10 +435,10 @@ class CheckoutPageAScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildMoveInColumn(
-    BuildContext context, {
-    required String moveInText,
-    required String dateText,
-  }) {
+      BuildContext context, {
+        required String moveInText,
+        required String dateText,
+      }) {
     return Column(children: [
       Align(
           alignment: Alignment.centerRight,
@@ -449,10 +464,10 @@ class CheckoutPageAScreen extends StatelessWidget {
 
   /// Common widget
   Widget _buildRentPerMonthRow(
-    BuildContext context, {
-    required String monthlySubtotalText,
-    required String rsText,
-  }) {
+      BuildContext context, {
+        required String monthlySubtotalText,
+        required String rsText,
+      }) {
     return Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
       Padding(
           padding: EdgeInsets.only(top: 1.v),

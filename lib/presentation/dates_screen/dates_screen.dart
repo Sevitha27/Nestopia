@@ -17,7 +17,22 @@ class DatesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Container(
                 width: double.maxFinite,
                 padding: EdgeInsets.all(16.h),
@@ -32,7 +47,7 @@ class DatesScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -48,7 +63,7 @@ class DatesScreen extends StatelessWidget {
         ],
         styleType: Style.bgFill);
   }
-
+*/
   /// Section Widget
   Widget _buildCalendar(BuildContext context) {
     return SizedBox(
@@ -85,7 +100,7 @@ class DatesScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.only(left: 16.h, right: 16.h, bottom: 20.v),
         child:
-            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           CustomOutlinedButton(width: 99.h, text: "Back"),
           CustomElevatedButton(
               width: 130.h,

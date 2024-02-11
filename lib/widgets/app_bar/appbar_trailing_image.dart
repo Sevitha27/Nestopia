@@ -1,36 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 
-// ignore: must_be_immutable
 class AppbarTrailingImage extends StatelessWidget {
-  AppbarTrailingImage({
+  const AppbarTrailingImage({
     Key? key,
-    this.imagePath,
+    required this.onTapNestopia,
+    this.imagePath = 'assets/nestopia_icon.png',
     this.margin,
-    this.onTap,
-  }) : super(
-          key: key,
-        );
+  }) : super(key: key);
 
-  String? imagePath;
-
-  EdgeInsetsGeometry? margin;
-
-  Function? onTap;
+  final VoidCallback onTapNestopia;
+  final String imagePath;
+  final EdgeInsetsGeometry? margin;
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        onTap!.call();
-      },
+      onTap: onTapNestopia,
       child: Padding(
         padding: margin ?? EdgeInsets.zero,
-        child: CustomImageView(
-          imagePath: imagePath,
-          height: 44.v,
-          width: 46.h,
-          fit: BoxFit.contain,
+        child: Image.asset(
+          imagePath,
+          height: 44.0, // Adjust the size as needed
+          width: 46.0,
         ),
       ),
     );

@@ -32,7 +32,22 @@ class PostProfileScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -41,7 +56,7 @@ class PostProfileScreen extends StatelessWidget {
                         padding: EdgeInsets.only(bottom: 5.v),
                         child: Column(children: [
                           Container(
-                              width: 300.h,
+                              width: 267.h,
                               margin: EdgeInsets.symmetric(horizontal: 53.h),
                               child: Text("Please tell us a little about you",
                                   maxLines: 2,
@@ -107,7 +122,7 @@ class PostProfileScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+/*  PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -122,7 +137,7 @@ class PostProfileScreen extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ],
         styleType: Style.bgFill);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildOneRow(BuildContext context) {

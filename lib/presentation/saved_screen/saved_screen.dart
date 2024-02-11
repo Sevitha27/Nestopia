@@ -3,7 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
-
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class SavedScreen extends StatelessWidget {
   SavedScreen({Key? key}) : super(key: key);
@@ -17,21 +25,33 @@ class SavedScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+            appBar: AppBar(
+
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SizedBox(
                     width: double.maxFinite,
                     child: SingleChildScrollView(
                         child: Column(children: [
-                      _buildHeader(context),
-                      SizedBox(height: 5.v),
-                      _buildApartmentList(context),
-                      SizedBox(height: 40.v),
-                      _buildShowMoreButton(context),
-                      SizedBox(height: 80.v),
-                      _buildFooter(context),
-                      SizedBox(height: 80.v)
-                    ]))))));
+                          _buildHeader(context),
+                          SizedBox(height: 5.v),
+                          _buildApartmentList(context),
+                          SizedBox(height: 40.v),
+                          _buildShowMoreButton(context),
+                          SizedBox(height: 80.v),
+                          _buildFooter(context),
+                          SizedBox(height: 80.v)
+                        ]))))));
   }
 
   /// Section Widget
@@ -46,7 +66,7 @@ class SavedScreen extends StatelessWidget {
                   width: double.maxFinite,
                   margin: EdgeInsets.only(bottom: 30.v),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.v),
+                  EdgeInsets.symmetric(horizontal: 16.h, vertical: 12.v),
                   child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -207,15 +227,15 @@ class SavedScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                          CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                    theme.textTheme.bodyLarge),
+                                                theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                    theme.textTheme.bodyLarge)
+                                                theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),

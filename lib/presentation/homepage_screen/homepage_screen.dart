@@ -21,57 +21,70 @@ class HomepageScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-            resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
-            body: Form(
-                key: _formKey,
-                child: SingleChildScrollView(
-                    child: Padding(
-                        padding: EdgeInsets.only(bottom: 4.v),
-                        child: DottedBorder(
-                            color: theme.colorScheme.errorContainer,
-                            padding: EdgeInsets.only(
-                                left: 1.h, top: 1.v, right: 1.h, bottom: 1.v),
-                            strokeWidth: 1.h,
-                            radius: Radius.circular(5),
-                            borderType: BorderType.RRect,
-                            dashPattern: [10, 5],
-                            child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 26.v),
-                                decoration: AppDecoration.outlineErrorContainer
-                                    .copyWith(
-                                        borderRadius:
-                                            BorderRadiusStyle.roundedBorder5),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      _buildSignInRow(context),
-                                      SizedBox(height: 4.v),
-                                      _buildFirstScreenStack(context),
-                                      _buildFirstScreenColumn(context),
-                                      _buildBespokePartnershipsColumn(context),
-                                      SizedBox(height: 7.v),
-                                      _buildFooterStack(context),
-                                      SizedBox(height: 25.v)
-                                    ]))))))));
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text('Nestopia'),
+          centerTitle: true,
+        ),
+        backgroundColor: Colors.white, // Set background color to green
+        body: SingleChildScrollView(
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _buildSignInRow(context),
+                SizedBox(height: 4.v),
+                _buildFirstScreenStack(context),
+                _buildFirstScreenColumn(context),
+                _buildBespokePartnershipsColumn(context),
+                SizedBox(height: 7.v),
+                _buildFooterStack(context),
+                SizedBox(height: 25.v),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+  /// Section Widget
+  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
-        leadingWidth: 62.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgCalendar,
-            margin: EdgeInsets.only(left: 16.h, top: 12.v, bottom: 12.v)),
-        actions: [
-          AppbarTrailingImage(
-              imagePath: ImageConstant.imgMegaphone,
-              margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
-        ]);
-  }
+      leadingWidth: 62.h,
+      leading: IconButton(
+        icon: Icon(Icons.home),
+        onPressed: () {
+          Navigator.popUntil(context, ModalRoute.withName('/'));
+        },
+      ),
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Spacer(), // Add a spacer to push the title to the right
+          Text(
+            "Nestopia",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 18,
+              color: Colors.black,
+            ),
+          ),
+          Spacer(), // Add another spacer for additional spacing
+        ],
+      ),
+      actions: [
+        AppbarTrailingImage(
+            imagePath: ImageConstant.imgMegaphone,
+            margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
+      ],
+    );
+  }*/
+
+
+
 
   /// Section Widget
   Widget _buildSignInButton(BuildContext context) {
@@ -151,15 +164,16 @@ class HomepageScreen extends StatelessWidget {
                       children: [
                         SizedBox(height: 214.v),
                         Padding(
-                            padding: EdgeInsets.only(right: 24.h),
-                            child: CustomSearchView(
-                                controller: searchController,
-                                hintText: "Search ",
-                                borderDecoration:
-                                    SearchViewStyleHelper.outlineGray,
-                                filled: true,
-                                fillColor: theme.colorScheme.onPrimary
-                                    .withOpacity(1))),
+                          padding: EdgeInsets.symmetric(horizontal: 16.0), // Adjust the horizontal padding as needed
+                          child: CustomSearchView(
+                            controller: searchController,
+                            hintText: "Search ",
+                            borderDecoration: SearchViewStyleHelper.outlineGray,
+                            filled: true,
+                            fillColor: theme.colorScheme.onPrimary.withOpacity(1),
+                          ),
+                        ),
+
                         SizedBox(height: 32.v),
                         GestureDetector(
                             onTap: () {
@@ -172,7 +186,7 @@ class HomepageScreen extends StatelessWidget {
                                     horizontal: 28.h, vertical: 32.v),
                                 decoration: AppDecoration.fillGreen.copyWith(
                                     borderRadius:
-                                        BorderRadiusStyle.roundedBorder30),
+                                    BorderRadiusStyle.roundedBorder30),
                                 child: Text("Rent",
                                     style: theme.textTheme.titleLarge))),
                         SizedBox(height: 20.v),
@@ -187,7 +201,7 @@ class HomepageScreen extends StatelessWidget {
                                     horizontal: 28.h, vertical: 31.v),
                                 decoration: AppDecoration.fillGreen.copyWith(
                                     borderRadius:
-                                        BorderRadiusStyle.roundedBorder30),
+                                    BorderRadiusStyle.roundedBorder30),
                                 child: Text("PG",
                                     style: theme.textTheme.titleLarge))),
                         SizedBox(height: 20.v),
@@ -202,7 +216,7 @@ class HomepageScreen extends StatelessWidget {
                                     horizontal: 28.h, vertical: 31.v),
                                 decoration: AppDecoration.fillGreen.copyWith(
                                     borderRadius:
-                                        BorderRadiusStyle.roundedBorder30),
+                                    BorderRadiusStyle.roundedBorder30),
                                 child: Text("Find a Roommate",
                                     style: theme.textTheme.titleLarge))),
                         SizedBox(height: 20.v),
@@ -217,11 +231,11 @@ class HomepageScreen extends StatelessWidget {
                                     horizontal: 28.h, vertical: 29.v),
                                 decoration: AppDecoration.fillGreen.copyWith(
                                     borderRadius:
-                                        BorderRadiusStyle.roundedBorder30),
+                                    BorderRadiusStyle.roundedBorder30),
                                 child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                    CrossAxisAlignment.start,
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       SizedBox(height: 4.v),
@@ -234,7 +248,7 @@ class HomepageScreen extends StatelessWidget {
               child: Container(
                   margin: EdgeInsets.only(top: 28.v, right: 47.h),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
+                  EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
                   decoration: BoxDecoration(
                       borderRadius: BorderRadiusStyle.customBorderLR40),
                   child: Column(
@@ -270,7 +284,7 @@ class HomepageScreen extends StatelessWidget {
                   width: 338.h,
                   margin: EdgeInsets.only(right: 17.h),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 27.h, vertical: 31.v),
+                  EdgeInsets.symmetric(horizontal: 27.h, vertical: 31.v),
                   decoration: AppDecoration.fillGreen.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder30),
                   child: Column(
@@ -290,7 +304,7 @@ class HomepageScreen extends StatelessWidget {
                   width: 338.h,
                   margin: EdgeInsets.only(right: 17.h),
                   padding:
-                      EdgeInsets.symmetric(horizontal: 27.h, vertical: 29.v),
+                  EdgeInsets.symmetric(horizontal: 27.h, vertical: 29.v),
                   decoration: AppDecoration.fillGreen.copyWith(
                       borderRadius: BorderRadiusStyle.roundedBorder30),
                   child: Column(
@@ -392,7 +406,7 @@ class HomepageScreen extends StatelessWidget {
                             children: [
                               Padding(
                                   padding:
-                                      EdgeInsets.only(top: 1.v, bottom: 62.v),
+                                  EdgeInsets.only(top: 1.v, bottom: 62.v),
                                   child: Text("Company",
                                       textAlign: TextAlign.right,
                                       style: theme.textTheme.titleMedium)),
@@ -400,7 +414,7 @@ class HomepageScreen extends StatelessWidget {
                                   padding: EdgeInsets.only(left: 40.h),
                                   child: Column(
                                       crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                      CrossAxisAlignment.start,
                                       children: [
                                         Text("Home",
                                             style: theme.textTheme.bodyLarge),
@@ -436,7 +450,7 @@ class HomepageScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 135.h),
                             child:
-                                Text("FAQ", style: theme.textTheme.bodyLarge))),
+                            Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -480,7 +494,7 @@ class HomepageScreen extends StatelessWidget {
                         width: 266.h,
                         margin: EdgeInsets.only(left: 32.h, right: 55.h),
                         child: Text(
-                            "Be the first to know about our newest \nhouses",
+                            "Be the first to know about our newest houses",
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             textAlign: TextAlign.center,
@@ -497,7 +511,7 @@ class HomepageScreen extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.only(left: 73.h, right: 93.h),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    Text("Contact number: 9999999999",
+                    /*Text("Contact number: 9999999999",
                         style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -515,7 +529,7 @@ class HomepageScreen extends StatelessWidget {
                           height: 32.adaptSize,
                           width: 32.adaptSize,
                           margin: EdgeInsets.only(left: 12.h))
-                    ]),
+                    ]),*/
                     SizedBox(height: 13.v),
                     Align(
                         alignment: Alignment.centerLeft,
