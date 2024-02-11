@@ -23,7 +23,10 @@ class HomepageScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              title: Text('Nestopia'),
+              centerTitle: true,
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -60,7 +63,7 @@ class HomepageScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
+ /* PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
         leadingWidth: 62.h,
         leading: AppbarLeadingImage(
@@ -71,7 +74,7 @@ class HomepageScreen extends StatelessWidget {
               imagePath: ImageConstant.imgMegaphone,
               margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
         ]);
-  }
+  }*/
 
   /// Section Widget
   Widget _buildSignInButton(BuildContext context) {
