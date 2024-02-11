@@ -21,6 +21,7 @@ import 'package:sevitha_s_application2/presentation/log_in_screen/log_in_screen.
 import 'package:sevitha_s_application2/presentation/saved_screen/saved_screen.dart';
 import 'package:sevitha_s_application2/presentation/app_navigation_screen/app_navigation_screen.dart';
 
+
 class AppRoutes {
   static const String homepageScreen = '/homepage_screen';
 
@@ -86,5 +87,6 @@ class AppRoutes {
     logInScreen: (context) => LogInScreen(),
     savedScreen: (context) => SavedScreen(),
     appNavigationScreen: (context) => AppNavigationScreen()
+
   };
 }
