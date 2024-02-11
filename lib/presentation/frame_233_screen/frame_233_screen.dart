@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
-
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 class Frame233Screen extends StatelessWidget {
   const Frame233Screen({Key? key}) : super(key: key);
 
@@ -8,6 +16,18 @@ class Frame233Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+            appBar: AppBar(
+
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: SizedBox(
                 width: 395.h,
                 child: Column(children: [
@@ -58,13 +78,13 @@ class Frame233Screen extends StatelessWidget {
                                           width: 32.adaptSize),
                                       CustomImageView(
                                           imagePath:
-                                              ImageConstant.imgEvaFacebookFill,
+                                          ImageConstant.imgEvaFacebookFill,
                                           height: 32.adaptSize,
                                           width: 32.adaptSize,
                                           margin: EdgeInsets.only(left: 12.h)),
                                       CustomImageView(
                                           imagePath:
-                                              ImageConstant.imgEvaTwitterFill,
+                                          ImageConstant.imgEvaTwitterFill,
                                           height: 32.adaptSize,
                                           width: 32.adaptSize,
                                           margin: EdgeInsets.only(left: 12.h))
