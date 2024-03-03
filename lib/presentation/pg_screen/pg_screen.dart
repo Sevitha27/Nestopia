@@ -1,8 +1,10 @@
+import '../checkout_page_a_screen/checkout_page_a_screen.dart';
 import '../pg_screen/widgets/propertylist_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
@@ -17,7 +19,7 @@ class PgScreen extends StatelessWidget {
 
   List<String> dropdownItemList = ["Item One", "Item Two", "Item Three"];
 
-  TextEditingController emailController = TextEditingController();
+  //TextEditingController emailController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -27,11 +29,7 @@ class PgScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopi'),
               centerTitle: true,
               actions: [
@@ -816,13 +814,13 @@ class PgScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmail(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailController,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribe(BuildContext context) {
@@ -955,7 +953,7 @@ class PgScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmail(context),
+                    //_buildEmail(context),
                     SizedBox(height: 20.v),
                     _buildSubscribe(context),
                     SizedBox(height: 20.v)

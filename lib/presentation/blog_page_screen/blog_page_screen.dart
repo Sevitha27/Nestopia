@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 
@@ -10,7 +11,7 @@ import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 class BlogPageScreen extends StatelessWidget {
   BlogPageScreen({Key? key}) : super(key: key);
 
-  TextEditingController emailController = TextEditingController();
+  //TextEditingController emailController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -257,11 +258,11 @@ class BlogPageScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    CustomTextFormField(
-                        controller: emailController,
-                        hintText: "Email address",
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.emailAddress),
+                    // CustomTextFormField(
+                    //     controller: emailController,
+                    //     hintText: "Email address",
+                    //     textInputAction: TextInputAction.done,
+                    //     textInputType: TextInputType.emailAddress),
                     SizedBox(height: 20.v),
                     CustomElevatedButton(
                         width: 134.h,

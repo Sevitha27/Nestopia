@@ -5,14 +5,22 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class ListPropertyScreen extends StatelessWidget {
   ListPropertyScreen({Key? key}) : super(key: key);
 
   TextEditingController nameController = TextEditingController();
 
-  TextEditingController emailController = TextEditingController();
+ // TextEditingController emailController = TextEditingController();
 
   TextEditingController phoneNumberController = TextEditingController();
 
@@ -20,7 +28,7 @@ class ListPropertyScreen extends StatelessWidget {
 
   List<String> dropdownItemList1 = ["Item One", "Item Two", "Item Three"];
 
-  TextEditingController emailController1 = TextEditingController();
+ // TextEditingController emailController1 = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -321,14 +329,14 @@ class ListPropertyScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailController,
-        hintText: "Email *",
-        textInputType: TextInputType.emailAddress,
-        borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
-        fillColor: theme.colorScheme.onPrimary.withOpacity(1));
-  }
+  // Widget _buildEmail(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailController,
+  //       hintText: "Email *",
+  //       textInputType: TextInputType.emailAddress,
+  //       borderDecoration: TextFormFieldStyleHelper.fillOnPrimary,
+  //       fillColor: theme.colorScheme.onPrimary.withOpacity(1));
+  // }
 
   /// Section Widget
   Widget _buildPhoneNumber(BuildContext context) {
@@ -387,7 +395,7 @@ class ListPropertyScreen extends StatelessWidget {
                         SizedBox(height: 30.v),
                         _buildName(context),
                         SizedBox(height: 16.v),
-                        _buildEmail(context),
+                        //_buildEmail(context),
                         SizedBox(height: 16.v),
                         _buildPhoneNumber(context),
                         SizedBox(height: 26.v),
@@ -805,13 +813,13 @@ class ListPropertyScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail1(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailController1,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmail1(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailController1,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribe(BuildContext context) {
@@ -939,7 +947,7 @@ class ListPropertyScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmail1(context),
+                   // _buildEmail1(context),
                     SizedBox(height: 20.v),
                     _buildSubscribe(context),
                     SizedBox(height: 20.v)

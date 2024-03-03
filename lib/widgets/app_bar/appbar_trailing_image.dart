@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
 
 class AppbarTrailingImage extends StatelessWidget {
   const AppbarTrailingImage({

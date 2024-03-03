@@ -3,12 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 // ignore_for_file: must_be_immutable
 class SavedScreen extends StatelessWidget {
   SavedScreen({Key? key}) : super(key: key);
 
-  TextEditingController emailInputController = TextEditingController();
+ // TextEditingController emailInputController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -110,13 +118,13 @@ class SavedScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailInput(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailInputController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmailInput(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailInputController,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribeButton(BuildContext context) {
@@ -244,7 +252,7 @@ class SavedScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmailInput(context),
+                    //_buildEmailInput(context),
                     SizedBox(height: 20.v),
                     _buildSubscribeButton(context),
                     SizedBox(height: 20.v)

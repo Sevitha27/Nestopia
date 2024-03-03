@@ -93,8 +93,7 @@ class Metropolitanmanor1ItemWidget extends StatelessWidget {
                 SizedBox(height: 11.v),
                 GestureDetector(
                   onTap: () {
-                    // Navigate to the checkout page when the button is tapped
-                    Navigator.pushNamed(context,'/property_details_screen');
+                    Navigator.pushNamed(context,AppRoutes.propertyDetailsScreen);
                   },
                   child: CustomElevatedButton(
                     height: 28.v,
