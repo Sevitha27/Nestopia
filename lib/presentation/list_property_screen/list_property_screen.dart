@@ -1,5 +1,8 @@
 import '../list_property_screen/widgets/one_item_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'dart:developer';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
@@ -24,13 +27,15 @@ class ListPropertyScreen extends StatelessWidget {
 
   TextEditingController phoneNumberController = TextEditingController();
 
-  List<String> dropdownItemList = ["Item One", "Item Two", "Item Three"];
+  List<String> dropdownItemList = ["Area 1", "Area 2", "Area 3"];
 
   List<String> dropdownItemList1 = ["Item One", "Item Two", "Item Three"];
 
  // TextEditingController emailController1 = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -348,14 +353,56 @@ class ListPropertyScreen extends StatelessWidget {
         fillColor: theme.colorScheme.onPrimary.withOpacity(1));
   }
 
+  Future<void> sendData(String name, String phoneNumber) async {
+  var uid = FirebaseAuth.instance.currentUser?.uid;
+ 
+  //final CollectionReference collection = FirebaseFirestore.instance.collection('listProperty');
+  log("collection print");
+  try{
+    await FirebaseFirestore.instance.collection("listProperty").doc(uid).set({
+    'name': name,
+    'phoneNumber': phoneNumber,
+    'userId': uid,
+  }).then((value) {log("success");});
+  } catch(e)
+    {
+      log("catch exception");
+      log(e.toString());
+    }
+  
+  
+}
+
+  void onSubmit(BuildContext context) async {
+  if (_formKey.currentState!.validate()) {
+    _formKey.currentState!.save();
+
+    try {
+      // Your Firebase Firestore integration here
+      log("printhingg");
+      await sendData(nameController.text, phoneNumberController.text);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Data submitted successfully')),
+      );
+
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error submitting form: $e')),
+      );
+    }
+  }
+}
+
+
   /// Section Widget
   Widget _buildSubmit(BuildContext context) {
-    return CustomElevatedButton(
-        height: 48.v,
-        width: 131.h,
-        text: "Submit",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  return CustomElevatedButton(
+      height: 48.v,
+      width: 131.h,
+      text: "Submit",
+      buttonStyle: CustomButtonStyles.fillPrimary,
+      onPressed: () => onSubmit(context));
+}
 
   /// Section Widget
   Widget _buildFirstScreen(BuildContext context) {
