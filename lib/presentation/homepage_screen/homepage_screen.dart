@@ -8,13 +8,21 @@ import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 
-// ignore_for_file: must_be_immutable
-class HomepageScreen extends StatelessWidget {
-  HomepageScreen({Key? key}) : super(key: key);
 
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+
+class HomepageScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
 
-  TextEditingController emailController = TextEditingController();
+  //TextEditingController emailController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -28,15 +36,16 @@ class HomepageScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.white, // Set background color to green
         body: SingleChildScrollView(
+          // padding: EdgeInsets.only(left: 20.0),
           child: Form(
             key: _formKey,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _buildSignInRow(context),
                 SizedBox(height: 4.v),
                 _buildFirstScreenStack(context),
-                _buildFirstScreenColumn(context),
+                //_buildFirstScreenColumn(context),
                 _buildBespokePartnershipsColumn(context),
                 SizedBox(height: 7.v),
                 _buildFooterStack(context),
@@ -48,6 +57,7 @@ class HomepageScreen extends StatelessWidget {
       ),
     );
   }
+
 
   /// Section Widget
   /// Section Widget
@@ -84,8 +94,6 @@ class HomepageScreen extends StatelessWidget {
   }*/
 
 
-
-
   /// Section Widget
   Widget _buildSignInButton(BuildContext context) {
     return CustomElevatedButton(
@@ -103,16 +111,14 @@ class HomepageScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildCreateAccountButton(BuildContext context) {
     return CustomElevatedButton(
-        height: 41.v,
-        width: 154.h,
-        text: "Create an account",
-        buttonStyle: CustomButtonStyles.fillPrimaryContainer,
-        buttonTextStyle: CustomTextStyles.titleMediumBlack900,
-        onPressed: () {
-        // Navigate to the create_account_screen when the button is pressed
+      height: 41.v,
+      width: 154.h,
+      text: "Create an account",
+      buttonStyle: CustomButtonStyles.fillPrimaryContainer,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
         Navigator.pushNamed(context, AppRoutes.createAccountScreen);
-      },
-    );
+      },);
   }
 
   /// Section Widget
@@ -150,174 +156,300 @@ class HomepageScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildFirstScreenStack(BuildContext context) {
     return SizedBox(
-        height: 748.v,
-        width: 356.h,
-        child: Stack(alignment: Alignment.topLeft, children: [
+      height: 748.v,
+      width: 400.h,
+      child: Stack(
+        alignment: Alignment.topLeft,
+        children: [
           Align(
-              alignment: Alignment.center,
-              child: Container(
-                  padding: EdgeInsets.symmetric(vertical: 22.v),
-                  decoration: AppDecoration.fillPrimary,
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 214.v),
-                        Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 16.0), // Adjust the horizontal padding as needed
-                          child: CustomSearchView(
-                            controller: searchController,
-                            hintText: "Search ",
-                            borderDecoration: SearchViewStyleHelper.outlineGray,
-                            filled: true,
-                            fillColor: theme.colorScheme.onPrimary.withOpacity(1),
-                          ),
+            alignment: Alignment.center,
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 22.v),
+              decoration: AppDecoration.fillPrimary,
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // SizedBox(height: 214.v),
+                    // Padding(
+                    //   padding: EdgeInsets.symmetric(horizontal: 16.0),
+                    //   child: CustomSearchView(
+                    //     controller: searchController,
+                    //     hintText: "Search ",
+                    //     borderDecoration: SearchViewStyleHelper.outlineGray,
+                    //     filled: true,
+                    //     fillColor: theme.colorScheme.onPrimary.withOpacity(1),
+                    //   ),
+                    // ),
+                    Positioned(
+                      top: 28.v, // Adjust the top position as needed
+                      right: 47.h, // Adjust the right position as needed
+                      child: Container(
+                        margin: EdgeInsets.only(top: 28.v, right: 47.h),
+                        padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadiusStyle.customBorderLR40,
                         ),
-
-                        SizedBox(height: 32.v),
-                        GestureDetector(
-                            onTap: () {
-                              onTapOne(context);
-                            },
-                            child: Container(
-                                width: 339.h,
-                                margin: EdgeInsets.only(right: 17.h),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 28.h, vertical: 32.v),
-                                decoration: AppDecoration.fillGreen.copyWith(
-                                    borderRadius:
-                                    BorderRadiusStyle.roundedBorder30),
-                                child: Text("Rent",
-                                    style: theme.textTheme.titleLarge))),
-                        SizedBox(height: 20.v),
-                        GestureDetector(
-                            onTap: () {
-                              onTapTwo(context);
-                            },
-                            child: Container(
-                                width: 339.h,
-                                margin: EdgeInsets.only(right: 17.h),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 28.h, vertical: 31.v),
-                                decoration: AppDecoration.fillGreen.copyWith(
-                                    borderRadius:
-                                    BorderRadiusStyle.roundedBorder30),
-                                child: Text("PG",
-                                    style: theme.textTheme.titleLarge))),
-                        SizedBox(height: 20.v),
-                        GestureDetector(
-                            onTap: () {
-                              onTapThree(context);
-                            },
-                            child: Container(
-                                width: 339.h,
-                                margin: EdgeInsets.only(right: 17.h),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 28.h, vertical: 31.v),
-                                decoration: AppDecoration.fillGreen.copyWith(
-                                    borderRadius:
-                                    BorderRadiusStyle.roundedBorder30),
-                                child: Text("Find a Roommate",
-                                    style: theme.textTheme.titleLarge))),
-                        SizedBox(height: 20.v),
-                        GestureDetector(
-                            onTap: () {
-                              onTapFour(context);
-                            },
-                            child: Container(
-                                width: 339.h,
-                                margin: EdgeInsets.only(right: 17.h),
-                                padding: EdgeInsets.symmetric(
-                                    horizontal: 28.h, vertical: 29.v),
-                                decoration: AppDecoration.fillGreen.copyWith(
-                                    borderRadius:
-                                    BorderRadiusStyle.roundedBorder30),
-                                child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.start,
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
-                                      SizedBox(height: 4.v),
-                                      Text("Listing to find a Roommate",
-                                          style: theme.textTheme.titleLarge)
-                                    ])))
-                      ]))),
-          Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                  margin: EdgeInsets.only(top: 28.v, right: 47.h),
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadiusStyle.customBorderLR40),
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        SizedBox(height: 6.v),
-                        Container(
-                            width: 217.h,
-                            margin: EdgeInsets.only(left: 27.h),
-                            child: Text("Welcome to Nestopia!",
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            SizedBox(height: 4.v),
+                            Container(
+                              width: 400.h,
+                              margin: EdgeInsets.only(left: 27.h),
+                              child: Text(
+                                "Welcome to Nestopia!",
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.right,
-                                style: theme.textTheme.displayMedium!
-                                    .copyWith(height: 1.15)))
-                      ])))
-        ]));
+                                textAlign: TextAlign.center,
+                                style: theme.textTheme.displayMedium!.copyWith(
+                                  height: 1.15,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+
+
+
+
+                    SizedBox(height: 28.v),
+                    GestureDetector(
+                      onTap: () {
+                        onTapOne(context);
+                      },
+
+                      child: Container(
+                        width: 339.h,
+                        margin: EdgeInsets.only(right: 17.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 28.h,
+                          vertical: 32.v,
+                        ),
+                        decoration: AppDecoration.fillGreen.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder30,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Rent",
+                            style: theme.textTheme.titleLarge,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.v),
+                    GestureDetector(
+                      onTap: () {
+                        onTapTwo(context);
+                      },
+                      child: Container(
+                        width: 339.h,
+                        margin: EdgeInsets.only(right: 17.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 28.h,
+                          vertical: 31.v,
+                        ),
+                        decoration: AppDecoration.fillGreen.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder30,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "PG",
+                            style: theme.textTheme.titleLarge,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.v),
+                    GestureDetector(
+                      onTap: () {
+                        onTapThree(context);
+                      },
+                      child: Container(
+                        width: 339.h,
+                        margin: EdgeInsets.only(right: 17.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 28.h,
+                          vertical: 31.v,
+                        ),
+                        decoration: AppDecoration.fillGreen.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder30,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Find a Roommate",
+                            style: theme.textTheme.titleLarge,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.v),
+                    GestureDetector(
+                      onTap: () {
+                        onTapFour(context);
+                      },
+                      child: Container(
+                        width: 339.h,
+                        margin: EdgeInsets.only(right: 17.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 28.h,
+                          vertical: 29.v,
+                        ),
+                        decoration: AppDecoration.fillGreen.copyWith(
+                          borderRadius: BorderRadiusStyle.roundedBorder30,
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Listing for Roommate",
+                            style: theme.textTheme.titleLarge,
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20.v),
+                    GestureDetector(
+                        onTap: () {
+                          onTapOne1(context);
+                        },
+                        child: Container(
+                            width: 338.h,
+                            margin: EdgeInsets.only(right: 17.h),
+                            padding:
+                            EdgeInsets.symmetric(
+                                horizontal: 27.h, vertical: 31.v),
+                            decoration: AppDecoration.fillGreen.copyWith(
+                                borderRadius: BorderRadiusStyle
+                                    .roundedBorder30),
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(height: 2.v),
+                                  Center(child: Text("List Property",
+                                      style: theme.textTheme.titleLarge))
+                                ]))),
+                    SizedBox(height: 20.v),
+                    GestureDetector(
+                        onTap: () {
+                          onTapTwo1(context);
+                        },
+                        child: Container(
+                            width: 338.h,
+                            margin: EdgeInsets.only(right: 17.h),
+                            padding:
+                            EdgeInsets.symmetric(
+                                horizontal: 27.h, vertical: 29.v),
+                            decoration: AppDecoration.fillGreen.copyWith(
+                                borderRadius: BorderRadiusStyle
+                                    .roundedBorder30),
+                            child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SizedBox(height: 4.v),
+                                  Center(
+                                    child: Text("Blogs",
+                                        style: theme.textTheme.titleLarge),
+                                  )
+                                ]))),
+                    //SizedBox(height: 63.v)
+                  ],
+                ),
+              ),
+            ),
+          ),
+          // Align(
+          //   alignment: Alignment.topRight,
+          //   child: Container(
+          //     margin: EdgeInsets.only(top: 28.v, right: 47.h),
+          //     padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadiusStyle.customBorderLR40,
+          //     ),
+          //     child: Column(
+          //       mainAxisSize: MainAxisSize.min,
+          //       crossAxisAlignment: CrossAxisAlignment.end,
+          //       children: [
+          //         SizedBox(height: 4.v),
+          //         Container(
+          //           width: 400.h,
+          //           margin: EdgeInsets.only(left: 27.h),
+          //           child: Text(
+          //             "Welcome to Nestopia!",
+          //             maxLines:2,
+          //             overflow: TextOverflow.ellipsis,
+          //             textAlign: TextAlign.center,
+          //             style: theme.textTheme.displayMedium!.copyWith(
+          //                 height: 1.15),
+          //
+          //
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+        ],
+      ),
+    );
   }
 
+
   /// Section Widget
-  Widget _buildFirstScreenColumn(BuildContext context) {
-    return Container(
-        margin: EdgeInsets.only(right: 20.h),
-        padding: EdgeInsets.symmetric(vertical: 15.v),
-        decoration: AppDecoration.fillPrimary,
-        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-          GestureDetector(
-              onTap: () {
-                onTapOne1(context);
-              },
-              child: Container(
-                  width: 338.h,
-                  margin: EdgeInsets.only(right: 17.h),
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 27.h, vertical: 31.v),
-                  decoration: AppDecoration.fillGreen.copyWith(
-                      borderRadius: BorderRadiusStyle.roundedBorder30),
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(height: 2.v),
-                        Text("List Property", style: theme.textTheme.titleLarge)
-                      ]))),
-          SizedBox(height: 20.v),
-          GestureDetector(
-              onTap: () {
-                onTapTwo1(context);
-              },
-              child: Container(
-                  width: 338.h,
-                  margin: EdgeInsets.only(right: 17.h),
-                  padding:
-                  EdgeInsets.symmetric(horizontal: 27.h, vertical: 29.v),
-                  decoration: AppDecoration.fillGreen.copyWith(
-                      borderRadius: BorderRadiusStyle.roundedBorder30),
-                  child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(height: 4.v),
-                        Text("Blogs", style: theme.textTheme.titleLarge)
-                      ]))),
-          SizedBox(height: 63.v)
-        ]));
-  }
+  // Widget _buildFirstScreenColumn(BuildContext context) {
+  //   return Container(
+  //       margin: EdgeInsets.only(right: 20.h),
+  //       padding: EdgeInsets.symmetric(vertical: 15.v),
+  //       decoration: AppDecoration.fillPrimary,
+  //       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+  //         // GestureDetector(
+  //         //     onTap: () {
+  //         //       onTapOne1(context);
+  //         //     },
+  //         //     child: Container(
+  //         //         width: 338.h,
+  //         //         margin: EdgeInsets.only(right: 17.h),
+  //         //         padding:
+  //         //         EdgeInsets.symmetric(horizontal: 27.h, vertical: 31.v),
+  //         //         decoration: AppDecoration.fillGreen.copyWith(
+  //         //             borderRadius: BorderRadiusStyle.roundedBorder30),
+  //         //         child: Column(
+  //         //             mainAxisSize: MainAxisSize.min,
+  //         //             crossAxisAlignment: CrossAxisAlignment.start,
+  //         //             mainAxisAlignment: MainAxisAlignment.center,
+  //         //             children: [
+  //         //               SizedBox(height: 2.v),
+  //         //               Text("List Property", style: theme.textTheme.titleLarge)
+  //         //             ]))),
+  //         // SizedBox(height: 20.v),
+  //         // GestureDetector(
+  //         //     onTap: () {
+  //         //       onTapTwo1(context);
+  //         //     },
+  //         //     child: Container(
+  //         //         width: 338.h,
+  //         //         margin: EdgeInsets.only(right: 17.h),
+  //         //         padding:
+  //         //         EdgeInsets.symmetric(horizontal: 27.h, vertical: 29.v),
+  //         //         decoration: AppDecoration.fillGreen.copyWith(
+  //         //             borderRadius: BorderRadiusStyle.roundedBorder30),
+  //         //         child: Column(
+  //         //             mainAxisSize: MainAxisSize.min,
+  //         //             crossAxisAlignment: CrossAxisAlignment.start,
+  //         //             mainAxisAlignment: MainAxisAlignment.center,
+  //         //             children: [
+  //         //               SizedBox(height: 4.v),
+  //         //               Text("Blogs", style: theme.textTheme.titleLarge)
+  //         //             ]))),
+  //         // SizedBox(height: 63.v)
+  //       ]));
+  // }
 
   /// Section Widget
   Widget _buildStartBookingButton(BuildContext context) {
@@ -340,7 +472,7 @@ class HomepageScreen extends StatelessWidget {
             image: DecorationImage(
                 image: AssetImage(ImageConstant.imgBespokePartnerships),
                 fit: BoxFit.cover)),
-        foregroundDecoration: AppDecoration.gradientBlackToBlack,
+        //foregroundDecoration: AppDecoration.gradientBlackToBlack,
         child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -362,15 +494,15 @@ class HomepageScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(right: 16.h),
-        child: CustomTextFormField(
-            controller: emailController,
-            hintText: "Email address",
-            textInputAction: TextInputAction.done,
-            textInputType: TextInputType.emailAddress));
-  }
+  // Widget _buildEmail(BuildContext context) {
+  //   return Padding(
+  //       padding: EdgeInsets.only(right: 16.h),
+  //       child: CustomTextFormField(
+  //           controller: emailController,
+  //           hintText: "Email address",
+  //           textInputAction: TextInputAction.done,
+  //           textInputType: TextInputType.emailAddress));
+  // }
 
   /// Section Widget
   Widget _buildSubscribe(BuildContext context) {
@@ -441,8 +573,10 @@ class HomepageScreen extends StatelessWidget {
                               },
                               child: Padding(
                                   padding: EdgeInsets.only(left: 40.h),
-                                  child: Text("Blog",
-                                      style: theme.textTheme.bodyLarge)))
+                                  child: Center(
+                                    child: Text("Blog",
+                                        style: theme.textTheme.bodyLarge),
+                                  )))
                         ])),
                     SizedBox(height: 11.v),
                     Align(
@@ -500,11 +634,11 @@ class HomepageScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
-                    SizedBox(height: 19.v),
-                    _buildEmail(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribe(context),
-                    SizedBox(height: 20.v)
+                    // SizedBox(height: 19.v),
+                    // _buildEmail(context),
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribe(context),
+                    // SizedBox(height: 20.v)
                   ])),
           Align(
               alignment: Alignment.bottomLeft,

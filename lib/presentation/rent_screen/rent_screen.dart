@@ -170,17 +170,32 @@ class RentScreen extends StatelessWidget {
   /// Section Widget
   Widget _buildSortResult(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.h),
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+      padding: EdgeInsets.symmetric(horizontal: 16.h),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
           Text("52 results for your filters", style: theme.textTheme.bodyLarge),
           Spacer(),
-          Text("Sort by", style: CustomTextStyles.titleMediumBluegray700),
-          CustomImageView(
-              imagePath: ImageConstant.imgEvaarrowdownfill,
-              height: 20.adaptSize,
-              width: 20.adaptSize,
-              margin: EdgeInsets.only(left: 12.h))
-        ]));
+          GestureDetector(
+            onTap: () {
+              // Navigate to the sort page
+              Navigator.pushNamed(context, '/filters_screen');
+            },
+            child: Row(
+              children: [
+                Text("Sort by", style: CustomTextStyles.titleMediumBluegray700),
+                CustomImageView(
+                  imagePath: ImageConstant.imgEvaarrowdownfill,
+                  height: 20.adaptSize,
+                  width: 20.adaptSize,
+                  margin: EdgeInsets.only(left: 12.h),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   /// Section Widget
@@ -208,13 +223,13 @@ class RentScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmail(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailController,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribe(BuildContext context) {
@@ -342,7 +357,7 @@ class RentScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmail(context),
+                    //_buildEmail(context),
                     SizedBox(height: 20.v),
                     _buildSubscribe(context),
                     SizedBox(height: 20.v)
@@ -353,7 +368,7 @@ class RentScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 93.h),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
                     Text("Contact number: 9999999999",
-                        style: CustomTextStyles.bodyMediumGray900),
+                       style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       CustomImageView(

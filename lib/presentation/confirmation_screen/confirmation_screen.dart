@@ -14,11 +14,7 @@ class ConfirmationScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [

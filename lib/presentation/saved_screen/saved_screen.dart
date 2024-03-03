@@ -16,7 +16,7 @@ import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 class SavedScreen extends StatelessWidget {
   SavedScreen({Key? key}) : super(key: key);
 
-  TextEditingController emailInputController = TextEditingController();
+ // TextEditingController emailInputController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -118,13 +118,13 @@ class SavedScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailInput(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailInputController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmailInput(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailInputController,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribeButton(BuildContext context) {
@@ -252,7 +252,7 @@ class SavedScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmailInput(context),
+                    //_buildEmailInput(context),
                     SizedBox(height: 20.v),
                     _buildSubscribeButton(context),
                     SizedBox(height: 20.v)

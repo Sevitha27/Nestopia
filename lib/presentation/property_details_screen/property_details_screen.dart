@@ -15,7 +15,8 @@ class PropertyDetailsScreen extends StatelessWidget {
 
   Completer<GoogleMapController> googleMapController = Completer();
 
-  TextEditingController emailEditTextController = TextEditingController();
+ //
+  // TextEditingController emailEditTextController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -25,11 +26,7 @@ class PropertyDetailsScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -199,9 +196,11 @@ class PropertyDetailsScreen extends StatelessWidget {
                                   text: "Kettle",
                                   image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
-                          _buildPhoneRow(context,
-                              text: "Coffee machine",
-                              image: ImageConstant.imgMdiCoffeeMaker),
+                          Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 87.h),
+                              child: _buildPhoneRow(context,
+                                  text: "Coffee Maker",
+                                  image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
@@ -209,9 +208,11 @@ class PropertyDetailsScreen extends StatelessWidget {
                                   text: "Dishes",
                                   image: ImageConstant.imgMdiPotSteam)),
                           SizedBox(height: 20.v),
-                          _buildPhoneRow(context,
-                              text: "Washing machine",
-                              image: ImageConstant.imgMdiWashingMachineGray900),
+                          Padding(
+                              padding: EdgeInsets.symmetric(horizontal: 87.h),
+                              child: _buildPhoneRow(context,
+                                  text: "Washing Machine",
+                                  image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
@@ -369,7 +370,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                             .copyWith(height: 1.25)))
                               ]),
                           SizedBox(height: 50.v),
-                          _buildEmailStack(context)
+                          // _buildEmailStack(context)
                         ]))))));
   }
 
@@ -480,14 +481,7 @@ class PropertyDetailsScreen extends StatelessWidget {
             myLocationEnabled: false));
   }
 
-  /// Section Widget
-  Widget _buildEmailEditText(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailEditTextController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+
 
   /// Section Widget
   Widget _buildSubscribeButton(BuildContext context) {
@@ -605,7 +599,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmailEditText(context),
+                    // _buildEmailEditText(context),
                     SizedBox(height: 20.v),
                     _buildSubscribeButton(context),
                     SizedBox(height: 40.v),
