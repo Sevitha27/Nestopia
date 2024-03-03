@@ -2,12 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 
-// ignore: must_be_immutable
 class Metropolitanmanor1ItemWidget extends StatelessWidget {
-  const Metropolitanmanor1ItemWidget({Key? key})
-      : super(
-          key: key,
-        );
+  const Metropolitanmanor1ItemWidget({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -95,11 +91,16 @@ class Metropolitanmanor1ItemWidget extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 11.v),
-                CustomElevatedButton(
-                  height: 28.v,
-                  width: 181.h,
-                  text: "Available 28 Nov 2021",
-                  buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context,AppRoutes.propertyDetailsScreen);
+                  },
+                  child: CustomElevatedButton(
+                    height: 28.v,
+                    width: 181.h,
+                    text: "Available 28 Nov 2021",
+                    buttonTextStyle: CustomTextStyles.bodyLargeOnPrimary,
+                  ),
                 ),
                 SizedBox(height: 8.v),
                 RichText(

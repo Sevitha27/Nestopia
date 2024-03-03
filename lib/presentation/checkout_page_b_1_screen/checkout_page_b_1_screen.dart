@@ -44,11 +44,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -75,7 +71,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
                           SizedBox(height: 12.v),
                           _buildLastNameEditText(context),
                           SizedBox(height: 12.v),
-                          _buildEmailEditText(context),
+                          //_buildEmailEditText(context),
                           SizedBox(height: 12.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
@@ -89,7 +85,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
                           SizedBox(height: 20.v),
                           _buildNameEditText(context),
                           SizedBox(height: 12.v),
-                          _buildEmailEditText1(context),
+                          //_buildEmailEditText1(context),
                           SizedBox(height: 83.v),
                           Text("Payment method",
                               style: theme.textTheme.headlineLarge),
@@ -315,14 +311,14 @@ class CheckoutPageB1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailEditText(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.h),
-        child: CustomTextFormField(
-            controller: emailEditTextController,
-            hintText: "Email",
-            textInputType: TextInputType.emailAddress));
-  }
+  // Widget _buildEmailEditText(BuildContext context) {
+  //   return Padding(
+  //       padding: EdgeInsets.symmetric(horizontal: 16.h),
+  //       child: CustomTextFormField(
+  //           controller: emailEditTextController,
+  //           hintText: "Email",
+  //           textInputType: TextInputType.emailAddress));
+  // }
 
   /// Section Widget
   Widget _buildPhoneNumber(BuildContext context) {
@@ -387,14 +383,14 @@ class CheckoutPageB1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailEditText1(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.h),
-        child: CustomTextFormField(
-            controller: emailEditTextController1,
-            hintText: "Email of the guest",
-            textInputType: TextInputType.emailAddress));
-  }
+  // Widget _buildEmailEditText1(BuildContext context) {
+  //   return Padding(
+  //       padding: EdgeInsets.symmetric(horizontal: 16.h),
+  //       child: CustomTextFormField(
+  //           controller: emailEditTextController1,
+  //           hintText: "Email of the guest",
+  //           textInputType: TextInputType.emailAddress));
+  // }
 
   /// Section Widget
   Widget _buildBookButton(BuildContext context) {
@@ -408,13 +404,13 @@ class CheckoutPageB1Screen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailEditText2(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailEditTextController2,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmailEditText2(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailEditTextController2,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribeButton(BuildContext context) {
@@ -547,7 +543,7 @@ class CheckoutPageB1Screen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmailEditText2(context),
+                    //_buildEmailEditText2(context),
                     SizedBox(height: 20.v),
                     _buildSubscribeButton(context),
                     SizedBox(height: 20.v)
@@ -557,8 +553,8 @@ class CheckoutPageB1Screen extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 93.h),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    Text("Contact number: 9999999999",
-                        style: CustomTextStyles.bodyMediumGray900),
+                    // Text("Contact number: 9999999999",
+                    //     style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       CustomImageView(

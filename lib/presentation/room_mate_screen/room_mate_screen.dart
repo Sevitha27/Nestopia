@@ -29,11 +29,7 @@ class RoomMateScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -222,13 +218,13 @@ class RoomMateScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmail(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailController,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmail(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailController,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
   Widget _buildSubscribe(BuildContext context) {
@@ -361,7 +357,7 @@ class RoomMateScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    _buildEmail(context),
+                    //_buildEmail(context),
                     SizedBox(height: 20.v),
                     _buildSubscribe(context),
                     SizedBox(height: 20.v)

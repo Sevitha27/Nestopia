@@ -10,7 +10,7 @@ import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 class CheckoutPageAScreen extends StatelessWidget {
   CheckoutPageAScreen({Key? key}) : super(key: key);
 
-  TextEditingController emailController = TextEditingController();
+ // TextEditingController emailController = TextEditingController();
 
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -20,11 +20,7 @@ class CheckoutPageAScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -386,11 +382,11 @@ class CheckoutPageAScreen extends StatelessWidget {
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
-                    CustomTextFormField(
-                        controller: emailController,
-                        hintText: "Email address",
-                        textInputAction: TextInputAction.done,
-                        textInputType: TextInputType.emailAddress),
+                    // CustomTextFormField(
+                    //     controller: emailController,
+                    //     hintText: "Email address",
+                    //     textInputAction: TextInputAction.done,
+                    //     textInputType: TextInputType.emailAddress),
                     SizedBox(height: 20.v),
                     CustomElevatedButton(
                         width: 134.h,
@@ -403,8 +399,8 @@ class CheckoutPageAScreen extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 93.h),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    Text("Contact number: 9999999999",
-                        style: CustomTextStyles.bodyMediumGray900),
+                    // Text("Contact number: 9999999999",
+                    //     style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                       CustomImageView(
@@ -486,7 +482,7 @@ class CheckoutPageAScreen extends StatelessWidget {
 
   /// Navigates to the createAccountScreen when the action is triggered.
   onTapConfirmAndPay(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.createAccountScreen);
+    Navigator.pushNamed(context, AppRoutes.paymentMethodScreen);
   }
 
   /// Navigates to the homepageScreen when the action is triggered.
