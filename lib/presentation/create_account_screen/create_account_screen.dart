@@ -8,6 +8,8 @@ import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_in_button/sign_in_button.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   // const HomePage({super.key});
@@ -36,6 +38,13 @@ class _HomePageState extends State<CreateAccountScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Google SignUp"),
+        actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
       ),
       body: _user != null ? _userInfo() : _googleSignInButton(),
     );
