@@ -28,7 +28,7 @@ class RentScreen extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
 
-              title: Text('Nestopia'),
+              title: Text('RENT'),
               centerTitle: true,
               actions: [
                 AppbarTrailingImage(
@@ -48,7 +48,7 @@ class RentScreen extends StatelessWidget {
                          
                           // _buildPropertyList(context),
                           // _buildOneRow(context),
-                          SizedBox(height: 20.v),
+                          SizedBox(height: 5.v),
                           _buildTwoRow(context),
                           SizedBox(height: 20.v),
                           _buildOneRow1(context),
@@ -170,7 +170,7 @@ class RentScreen extends StatelessWidget {
         // Navigate to a new screen on button tap
         Navigator.pushNamed(
             context,
-            AppRoutes.checkoutPageAScreen
+            AppRoutes.propertyDetailsScreen
 
         );
       },
@@ -211,7 +211,7 @@ class RentScreen extends StatelessWidget {
                             style: theme.textTheme.bodySmall!
                                 .copyWith(height: 1.33))),
                     SizedBox(height: 11.v),
-                    _buildAvailable28Nov2022(context),
+                    _buildAvailable28Nov2021(context),
                     SizedBox(height: 8.v),
                     RichText(
                         text: TextSpan(children: [

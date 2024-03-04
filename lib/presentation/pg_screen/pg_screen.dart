@@ -30,7 +30,7 @@ class PgScreen extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
 
-              title: Text('Nestopi'),
+              title: Text('PG'),
               centerTitle: true,
               actions: [
                 AppbarTrailingImage(
@@ -47,15 +47,16 @@ class PgScreen extends StatelessWidget {
                     child: Padding(
                         padding: EdgeInsets.only(bottom: 8.v),
                         child: Column(children: [
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 16.h),
-                              child: CustomSearchView(
-                                  controller: searchController,
-                                  hintText: "Select a city")),
-                          SizedBox(height: 40.v),
-                          _buildFilters(context),
-                          SizedBox(height: 22.v),
-                          _buildPropertyList(context),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 16.h),
+                          //     child: CustomSearchView(
+                          //         controller: searchController,
+                          //         hintText: "Select a city")),
+                          // SizedBox(height: 40.v),
+                          // _buildFilters(context),
+                          
+                          SizedBox(height: 5.v),
+                          // _buildPropertyList(context),
                           _buildOneRow(context),
                           SizedBox(height: 20.v),
                           _buildTwoRow(context),
