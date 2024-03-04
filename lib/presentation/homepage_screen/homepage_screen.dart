@@ -34,694 +34,319 @@ class HomepageScreen extends StatelessWidget {
           title: Text('Nestopia'),
           centerTitle: true,
         ),
-        backgroundColor: Colors.white, // Set background color to green
-        body: SingleChildScrollView(
-          // padding: EdgeInsets.only(left: 20.0),
-          child: Form(
-            key: _formKey,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                _buildSignInRow(context),
-                SizedBox(height: 4.v),
-                _buildFirstScreenStack(context),
-                //_buildFirstScreenColumn(context),
-                _buildBespokePartnershipsColumn(context),
-                SizedBox(height: 7.v),
-                _buildFooterStack(context),
-                SizedBox(height: 25.v),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
-
-  /// Section Widget
-  /// Section Widget
-  /* PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-      leadingWidth: 62.h,
-      leading: IconButton(
-        icon: Icon(Icons.home),
-        onPressed: () {
-          Navigator.popUntil(context, ModalRoute.withName('/'));
-        },
-      ),
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Spacer(), // Add a spacer to push the title to the right
-          Text(
-            "Nestopia",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 18,
-              color: Colors.black,
-            ),
-          ),
-          Spacer(), // Add another spacer for additional spacing
-        ],
-      ),
-      actions: [
-        AppbarTrailingImage(
-            imagePath: ImageConstant.imgMegaphone,
-            margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v))
-      ],
-    );
-  }*/
-
-
-  /// Section Widget
-  Widget _buildSignInButton(BuildContext context) {
-    return CustomElevatedButton(
-        height: 36.v,
-        width: 103.h,
-        text: "Sign in",
-        margin: EdgeInsets.only(top: 5.v, bottom: 36.v),
-        buttonStyle: CustomButtonStyles.fillGray,
-        buttonTextStyle: CustomTextStyles.titleMediumBlack900,
-        onPressed: () {
-          onTapSignInButton(context);
-        });
-  }
-
-  /// Section Widget
-  Widget _buildCreateAccountButton(BuildContext context) {
-    return CustomElevatedButton(
-      height: 41.v,
-      width: 154.h,
-      text: "Create an account",
-      buttonStyle: CustomButtonStyles.fillPrimaryContainer,
-      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
-      onPressed: () {
-        Navigator.pushNamed(context, AppRoutes.createAccountScreen);
-      },);
-  }
-
-  /// Section Widget
-  Widget _buildChatbotButton(BuildContext context) {
-    return CustomElevatedButton(
-        height: 29.v,
-        width: 80.h,
-        text: "Chatbot",
-        margin: EdgeInsets.only(right: 15.h),
-        buttonStyle: CustomButtonStyles.fillGreen,
-        buttonTextStyle: CustomTextStyles.titleMediumBlack900,
-        onPressed: () {
-          onTapChatbotButton(context);
-        },
-        alignment: Alignment.centerRight);
-  }
-
-  /// Section Widget
-  Widget _buildSignInRow(BuildContext context) {
-    return Padding(
-        padding: EdgeInsets.only(left: 11.h, right: 34.h),
-        child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _buildSignInButton(context),
-              Column(children: [
-                _buildCreateAccountButton(context),
-                SizedBox(height: 7.v),
-                _buildChatbotButton(context)
-              ])
-            ]));
-  }
-
-  /// Section Widget
-  Widget _buildFirstScreenStack(BuildContext context) {
-    return SizedBox(
-      height: 748.v,
-      width: 400.h,
-      child: Stack(
-        alignment: Alignment.topLeft,
-        children: [
-          Align(
-            alignment: Alignment.center,
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 22.v),
-              decoration: AppDecoration.fillPrimary,
+        
+                    body: SizedBox(
+                      
+              width: SizeUtils.width,
               child: SingleChildScrollView(
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    // SizedBox(height: 214.v),
-                    // Padding(
-                    //   padding: EdgeInsets.symmetric(horizontal: 16.0),
-                    //   child: CustomSearchView(
-                    //     controller: searchController,
-                    //     hintText: "Search ",
-                    //     borderDecoration: SearchViewStyleHelper.outlineGray,
-                    //     filled: true,
-                    //     fillColor: theme.colorScheme.onPrimary.withOpacity(1),
-                    //   ),
-                    // ),
-                    Positioned(
-                      top: 28.v, // Adjust the top position as needed
-                      right: 47.h, // Adjust the right position as needed
-                      child: Container(
-                        margin: EdgeInsets.only(top: 28.v, right: 47.h),
-                        padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadiusStyle.customBorderLR40,
-                        ),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.end,
+                padding: EdgeInsets.only(top: 14.v),
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: 5.v),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 320.v, // Adjust height as needed
+                        child: Stack(
                           children: [
-                            SizedBox(height: 4.v),
-                            Container(
-                              width: 400.h,
-                              margin: EdgeInsets.only(left: 27.h),
+                            CustomImageView(
+                              imagePath: 'assets/images/img_image_16.png', // Replace with your image path
+                              height: 320.v,
+                              width: double.infinity,
+                              fit: BoxFit.cover,
+                            ),
+                            Center(
                               child: Text(
-                                "Welcome to Nestopia!",
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
-                                textAlign: TextAlign.center,
-                                style: theme.textTheme.displayMedium!.copyWith(
-                                  height: 1.15,
+                                'Welcome to Nestopia!',
+                                style: TextStyle(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-
-
-
-
-                    SizedBox(height: 28.v),
-                    GestureDetector(
-                      onTap: () {
-                        onTapOne(context);
-                      },
-
-                      child: Container(
-                        width: 339.h,
-                        margin: EdgeInsets.only(right: 17.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 28.h,
-                          vertical: 32.v,
-                        ),
-                        decoration: AppDecoration.fillGreen.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder30,
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Rent",
-                            style: theme.textTheme.titleLarge,
-                          ),
-                        ),
+                      SizedBox(height: 32.v),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          _buildSignInButton(context),
+                          _buildSaved(context),
+                          _buildCreateAccountButton(context),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 20.v),
-                    GestureDetector(
-                      onTap: () {
-                        onTapTwo(context);
-                      },
-                      child: Container(
-                        width: 339.h,
-                        margin: EdgeInsets.only(right: 17.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 28.h,
-                          vertical: 31.v,
-                        ),
-                        decoration: AppDecoration.fillGreen.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder30,
-                        ),
-                        child: Center(
-                          child: Text(
-                            "PG",
-                            style: theme.textTheme.titleLarge,
+                      SizedBox(height: 32.v),
+                      _buildRentRoom(context),
+                      SizedBox(height: 40.v),
+                      _buildPG(context),
+                      SizedBox(height: 39.v),
+                      _buildFindRoommate(context),
+                      SizedBox(height: 43.v),
+                      _buildListingToFindRoommate(context),
+                      SizedBox(height: 43.v),
+                      _buildListProperty(context),
+                      SizedBox(height: 41.v),
+                      _buildBlogs(context),
+                      SizedBox(height: 47.v),
+                      // Add space between Blogs button and image
+                      Stack(
+                        children: [
+                          CustomImageView(
+                            imagePath: 'assets/images/Bo.webp', // Replace with your image path
+                            height: 600.v,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
                           ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20.v),
-                    GestureDetector(
-                      onTap: () {
-                        onTapThree(context);
-                      },
-                      child: Container(
-                        width: 339.h,
-                        margin: EdgeInsets.only(right: 17.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 28.h,
-                          vertical: 31.v,
-                        ),
-                        decoration: AppDecoration.fillGreen.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder30,
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Find a Roommate",
-                            style: theme.textTheme.titleLarge,
+                          Positioned.fill(
+                            child: Align(
+                              alignment: Alignment.center,
+                              child: Padding(
+                                padding: const EdgeInsets.only(bottom: 16.0),
+                                child: _buildStartBookingButton(context),
+                              ),
+                            ),
                           ),
-                        ),
+                        ],
                       ),
-                    ),
-                    SizedBox(height: 20.v),
-                    GestureDetector(
-                      onTap: () {
-                        onTapFour(context);
-                      },
-                      child: Container(
-                        width: 339.h,
-                        margin: EdgeInsets.only(right: 17.h),
-                        padding: EdgeInsets.symmetric(
-                          horizontal: 28.h,
-                          vertical: 29.v,
-                        ),
-                        decoration: AppDecoration.fillGreen.copyWith(
-                          borderRadius: BorderRadiusStyle.roundedBorder30,
-                        ),
-                        child: Center(
-                          child: Text(
-                            "Listing for Roommate",
-                            style: theme.textTheme.titleLarge,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 20.v),
-                    GestureDetector(
-                        onTap: () {
-                          onTapOne1(context);
-                        },
-                        child: Container(
-                            width: 338.h,
-                            margin: EdgeInsets.only(right: 17.h),
-                            padding:
-                            EdgeInsets.symmetric(
-                                horizontal: 27.h, vertical: 31.v),
-                            decoration: AppDecoration.fillGreen.copyWith(
-                                borderRadius: BorderRadiusStyle
-                                    .roundedBorder30),
-                            child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(height: 2.v),
-                                  Center(child: Text("List Property",
-                                      style: theme.textTheme.titleLarge))
-                                ]))),
-                    SizedBox(height: 20.v),
-                    GestureDetector(
-                        onTap: () {
-                          onTapTwo1(context);
-                        },
-                        child: Container(
-                            width: 338.h,
-                            margin: EdgeInsets.only(right: 17.h),
-                            padding:
-                            EdgeInsets.symmetric(
-                                horizontal: 27.h, vertical: 29.v),
-                            decoration: AppDecoration.fillGreen.copyWith(
-                                borderRadius: BorderRadiusStyle
-                                    .roundedBorder30),
-                            child: Column(
-                                mainAxisSize: MainAxisSize.min,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  SizedBox(height: 4.v),
-                                  Center(
-                                    child: Text("Blogs",
-                                        style: theme.textTheme.titleLarge),
-                                  )
-                                ]))),
-                    //SizedBox(height: 63.v)
-                  ],
+
+                      SizedBox(height: 57.v),
+                      Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                                padding: EdgeInsets.only(
+                                    top: 1.v, bottom: 62.v),
+                                child: Text("               company",
+                                    style: theme.textTheme.titleMedium)),
+                            Padding(
+                                padding: EdgeInsets.only(right: 50.h),
+                                child: Column(
+                                    crossAxisAlignment:
+                                    CrossAxisAlignment.start,
+                                    children: [
+                                      Text("               Home",
+                                          style:
+                                          theme.textTheme.bodyLarge),
+                                      SizedBox(height: 11.v),
+                                      Text("               about us",
+                                          style:
+                                          theme.textTheme.bodyLarge),
+                                      SizedBox(height: 12.v),
+                                      Text("               our team",
+                                          style:
+                                          theme.textTheme.bodyLarge)
+                                    ]))
+                          ]),
+                      SizedBox(height: 44.v),
+                      Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                              padding: EdgeInsets.only(right: 70.h),
+                              child: Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.end,
+                                  crossAxisAlignment:
+                                  CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                        padding: EdgeInsets.only(
+                                            top: 1.v, bottom: 32.v),
+                                        child: Text("privacy",
+                                            style: theme
+                                                .textTheme.titleMedium)),
+                                    Padding(
+                                        padding:
+                                        EdgeInsets.only(left: 40.h),
+                                        child: Column(
+                                            crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                  "terms of service",
+                                                  style: theme.textTheme
+                                                      .bodyLarge),
+                                              SizedBox(height: 13.v),
+                                              Text(
+                                                  "privacy policy",
+                                                  style: theme.textTheme
+                                                      .bodyLarge)
+                                            ]))
+                                  ]))),
+                      SizedBox(height: 47.v),
+                      Text("Stay up to date",
+                          style: theme.textTheme.titleMedium),
+                      SizedBox(height: 8.v),
+                      Text("Be the first to know",
+                          style: theme.textTheme.bodyLarge),
+                      //SizedBox(height: 50.v),
+                      //_buildSubscribe(context),
+                      SizedBox(height: 35.v),
+                      Text("Contact number:1234567890",
+                          style: CustomTextStyles.titleMediumBlack900),
+                      //SizedBox(height: 51.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 121.h),
+                              child: Row(children: [
+                                CustomImageView(
+                                    imagePath: ImageConstant.imgLink,
+                                    height: 32.adaptSize,
+                                    width: 32.adaptSize),
+                                CustomImageView(
+                                    imagePath:'assets\images\img_eva_facebook_fill.svg',
+                                    height: 32.adaptSize,
+                                    width: 32.adaptSize,
+                                    margin: EdgeInsets.only(left: 12.h)),
+                                CustomImageView(
+                                    imagePath:'assets\images\img_eva_twitter_fill.svg',
+                                    height: 32.adaptSize,
+                                    width: 32.adaptSize,
+                                    margin: EdgeInsets.only(left: 12.h))
+                              ]))),
+                      SizedBox(height: 13.v),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: Padding(
+                              padding: EdgeInsets.only(left: 121.h),
+                              child: Text("Nestopia 2023",
+                                  style: CustomTextStyles.titleMediumBlack900,)))
+                      // Add other UI widgets as needed
+                    ],
+                  ),
                 ),
               ),
             ),
           ),
-          // Align(
-          //   alignment: Alignment.topRight,
-          //   child: Container(
-          //     margin: EdgeInsets.only(top: 28.v, right: 47.h),
-          //     padding: EdgeInsets.symmetric(horizontal: 32.h, vertical: 23.v),
-          //     decoration: BoxDecoration(
-          //       borderRadius: BorderRadiusStyle.customBorderLR40,
-          //     ),
-          //     child: Column(
-          //       mainAxisSize: MainAxisSize.min,
-          //       crossAxisAlignment: CrossAxisAlignment.end,
-          //       children: [
-          //         SizedBox(height: 4.v),
-          //         Container(
-          //           width: 400.h,
-          //           margin: EdgeInsets.only(left: 27.h),
-          //           child: Text(
-          //             "Welcome to Nestopia!",
-          //             maxLines:2,
-          //             overflow: TextOverflow.ellipsis,
-          //             textAlign: TextAlign.center,
-          //             style: theme.textTheme.displayMedium!.copyWith(
-          //                 height: 1.15),
-          //
-          //
-          //           ),
-          //         ),
-          //       ],
-          //     ),
-          //   ),
-          // ),
-        ],
-      ),
+        );
+      }
+    
+
+
+  Widget _buildSaved(BuildContext context) {
+    return CustomElevatedButton(
+        height: 30.v,
+        width: 60.h,
+        text: "Saved",
+        buttonStyle: CustomButtonStyles.fillGray,
+        buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.savedScreen);
+      },
+    );
+
+  }
+  Widget _buildSignInButton(BuildContext context) {
+    return CustomElevatedButton(
+      height: 30.v,
+      width: 97.h,
+      text: "Sign in",
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.logInScreen);
+      },
+    );
+  }
+
+  Widget _buildCreateAccountButton(BuildContext context) {
+    return CustomElevatedButton(
+      height: 30.v,
+      width: 135.h,
+      text: "Create Account",
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.createAccountScreen);
+      },
     );
   }
 
 
-  /// Section Widget
-  // Widget _buildFirstScreenColumn(BuildContext context) {
-  //   return Container(
-  //       margin: EdgeInsets.only(right: 20.h),
-  //       padding: EdgeInsets.symmetric(vertical: 15.v),
-  //       decoration: AppDecoration.fillPrimary,
-  //       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-  //         // GestureDetector(
-  //         //     onTap: () {
-  //         //       onTapOne1(context);
-  //         //     },
-  //         //     child: Container(
-  //         //         width: 338.h,
-  //         //         margin: EdgeInsets.only(right: 17.h),
-  //         //         padding:
-  //         //         EdgeInsets.symmetric(horizontal: 27.h, vertical: 31.v),
-  //         //         decoration: AppDecoration.fillGreen.copyWith(
-  //         //             borderRadius: BorderRadiusStyle.roundedBorder30),
-  //         //         child: Column(
-  //         //             mainAxisSize: MainAxisSize.min,
-  //         //             crossAxisAlignment: CrossAxisAlignment.start,
-  //         //             mainAxisAlignment: MainAxisAlignment.center,
-  //         //             children: [
-  //         //               SizedBox(height: 2.v),
-  //         //               Text("List Property", style: theme.textTheme.titleLarge)
-  //         //             ]))),
-  //         // SizedBox(height: 20.v),
-  //         // GestureDetector(
-  //         //     onTap: () {
-  //         //       onTapTwo1(context);
-  //         //     },
-  //         //     child: Container(
-  //         //         width: 338.h,
-  //         //         margin: EdgeInsets.only(right: 17.h),
-  //         //         padding:
-  //         //         EdgeInsets.symmetric(horizontal: 27.h, vertical: 29.v),
-  //         //         decoration: AppDecoration.fillGreen.copyWith(
-  //         //             borderRadius: BorderRadiusStyle.roundedBorder30),
-  //         //         child: Column(
-  //         //             mainAxisSize: MainAxisSize.min,
-  //         //             crossAxisAlignment: CrossAxisAlignment.start,
-  //         //             mainAxisAlignment: MainAxisAlignment.center,
-  //         //             children: [
-  //         //               SizedBox(height: 4.v),
-  //         //               Text("Blogs", style: theme.textTheme.titleLarge)
-  //         //             ]))),
-  //         // SizedBox(height: 63.v)
-  //       ]));
-  // }
 
-  /// Section Widget
+  Widget _buildRentRoom(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "Rent",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.rentScreen);
+      },
+    );
+  }
+
+  Widget _buildPG(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "PG",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.pgScreen);
+      },
+    );
+  }
+
+  Widget _buildFindRoommate(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "Find a Roomate",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.filtersScreen);
+      },
+    );
+  }
+  Widget _buildListingToFindRoommate(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "Listing to find a Roomate",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.postProfileScreen);
+      },
+    );
+  }
+  Widget _buildListProperty(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "List Property",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.listPropertyScreen);
+      },
+    );
+  }
+  
+
+  Widget _buildBlogs(BuildContext context) {
+    return CustomElevatedButton(
+      height: 75.v,
+      text: "BLogs",
+      margin: EdgeInsets.only(left: 14.h, right: 18.h),
+      buttonStyle: CustomButtonStyles.fillGreen,
+      buttonTextStyle: CustomTextStyles.titleMediumBlack900,
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.blogPageScreen);
+      },
+    );
+  }
   Widget _buildStartBookingButton(BuildContext context) {
     return CustomElevatedButton(
-        width: 156.h,
-        text: "Start booking",
-        buttonStyle: CustomButtonStyles.fillPrimary,
-        onPressed: () {
-          onTapStartBookingButton(context);
-        });
-  }
-
-  /// Section Widget
-  Widget _buildBespokePartnershipsColumn(BuildContext context) {
-    return Container(
-        width: 355.h,
-        margin: EdgeInsets.only(right: 20.h),
-        padding: EdgeInsets.symmetric(vertical: 103.v),
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(ImageConstant.imgBespokePartnerships),
-                fit: BoxFit.cover)),
-        //foregroundDecoration: AppDecoration.gradientBlackToBlack,
-        child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text("Bespoke spaces",
-                  style: CustomTextStyles.headlineLargeOnPrimary),
-              SizedBox(height: 8.v),
-              SizedBox(
-                  width: 207.h,
-                  child: Text("Find Comfortable places at affordable rates!",
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: CustomTextStyles.bodyLargeOnPrimary
-                          .copyWith(height: 1.25))),
-              SizedBox(height: 39.v),
-              _buildStartBookingButton(context),
-              SizedBox(height: 76.v)
-            ]));
-  }
-
-  /// Section Widget
-  // Widget _buildEmail(BuildContext context) {
-  //   return Padding(
-  //       padding: EdgeInsets.only(right: 16.h),
-  //       child: CustomTextFormField(
-  //           controller: emailController,
-  //           hintText: "Email address",
-  //           textInputAction: TextInputAction.done,
-  //           textInputType: TextInputType.emailAddress));
-  // }
-
-  /// Section Widget
-  Widget _buildSubscribe(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        margin: EdgeInsets.only(left: 100.h),
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
-
-  /// Section Widget
-  Widget _buildFooterStack(BuildContext context) {
-    return SizedBox(
-        height: 726.v,
-        width: 355.h,
-        child: Stack(alignment: Alignment.bottomLeft, children: [
-          Align(
-              alignment: Alignment.center,
-              child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    CustomImageView(
-                        imagePath: ImageConstant.imgCalendar,
-                        height: 44.v,
-                        width: 46.h,
-                        margin: EdgeInsets.only(left: 144.h)),
-                    SizedBox(height: 54.v),
-                    Padding(
-                        padding: EdgeInsets.only(left: 79.h),
-                        child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding:
-                                  EdgeInsets.only(top: 1.v, bottom: 62.v),
-                                  child: Text("Company",
-                                      textAlign: TextAlign.right,
-                                      style: theme.textTheme.titleMedium)),
-                              Padding(
-                                  padding: EdgeInsets.only(left: 40.h),
-                                  child: Column(
-                                      crossAxisAlignment:
-                                      CrossAxisAlignment.start,
-                                      children: [
-                                        Text("Home",
-                                            style: theme.textTheme.bodyLarge),
-                                        SizedBox(height: 11.v),
-                                        Text("About us",
-                                            style: theme.textTheme.bodyLarge),
-                                        SizedBox(height: 12.v),
-                                        Text("Our team",
-                                            style: theme.textTheme.bodyLarge)
-                                      ]))
-                            ])),
-                    SizedBox(height: 19.v),
-                    Padding(
-                        padding: EdgeInsets.only(left: 97.h),
-                        child: Row(children: [
-                          Padding(
-                              padding: EdgeInsets.only(bottom: 1.v),
-                              child: Text("Guests",
-                                  textAlign: TextAlign.right,
-                                  style: theme.textTheme.titleMedium)),
-                          GestureDetector(
-                              onTap: () {
-                                onTapTxtBlog(context);
-                              },
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 40.h),
-                                  child: Center(
-                                    child: Text("Blog",
-                                        style: theme.textTheme.bodyLarge),
-                                  )))
-                        ])),
-                    SizedBox(height: 11.v),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                            padding: EdgeInsets.only(right: 135.h),
-                            child:
-                            Text("FAQ", style: theme.textTheme.bodyLarge))),
-                    SizedBox(height: 10.v),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                            padding: EdgeInsets.only(right: 119.h),
-                            child: Text("Career",
-                                style: theme.textTheme.bodyLarge))),
-                    SizedBox(height: 19.v),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                            padding: EdgeInsets.only(right: 51.h),
-                            child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  Padding(
-                                      padding: EdgeInsets.only(top: 1.v),
-                                      child: Text("Privacy",
-                                          textAlign: TextAlign.right,
-                                          style: theme.textTheme.titleMedium)),
-                                  Padding(
-                                      padding: EdgeInsets.only(left: 40.h),
-                                      child: Text("Terms of Service",
-                                          style: theme.textTheme.bodyLarge))
-                                ]))),
-                    SizedBox(height: 12.v),
-                    Align(
-                        alignment: Alignment.centerRight,
-                        child: Padding(
-                            padding: EdgeInsets.only(right: 70.h),
-                            child: Text("Privacy Policy",
-                                style: theme.textTheme.bodyLarge))),
-                    SizedBox(height: 39.v),
-                    Padding(
-                        padding: EdgeInsets.only(left: 113.h),
-                        child: Text("Stay up to date",
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.titleMedium)),
-                    SizedBox(height: 6.v),
-                    Container(
-                        width: 266.h,
-                        margin: EdgeInsets.only(left: 32.h, right: 55.h),
-                        child: Text(
-                            "Be the first to know about our newest houses",
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            textAlign: TextAlign.center,
-                            style: theme.textTheme.bodyLarge!
-                                .copyWith(height: 1.25))),
-                    // SizedBox(height: 19.v),
-                    // _buildEmail(context),
-                    // SizedBox(height: 20.v),
-                    // _buildSubscribe(context),
-                    // SizedBox(height: 20.v)
-                  ])),
-          Align(
-              alignment: Alignment.bottomLeft,
-              child: Padding(
-                  padding: EdgeInsets.only(left: 73.h, right: 93.h),
-                  child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    /*Text("Contact number: 9999999999",
-                        style: CustomTextStyles.bodyMediumGray900),
-                    SizedBox(height: 12.v),
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgLink,
-                          height: 32.adaptSize,
-                          width: 32.adaptSize),
-                      CustomImageView(
-                          imagePath: ImageConstant.imgEvaFacebookFill,
-                          height: 32.adaptSize,
-                          width: 32.adaptSize,
-                          margin: EdgeInsets.only(left: 12.h)),
-                      CustomImageView(
-                          imagePath: ImageConstant.imgEvaTwitterFill,
-                          height: 32.adaptSize,
-                          width: 32.adaptSize,
-                          margin: EdgeInsets.only(left: 12.h))
-                    ]),*/
-                    SizedBox(height: 13.v),
-                    Align(
-                        alignment: Alignment.centerLeft,
-                        child: Padding(
-                            padding: EdgeInsets.only(left: 34.h),
-                            child: Text("© 2023 Nestopia",
-                                style: CustomTextStyles.bodyMediumGray900)))
-                  ])))
-        ]));
-  }
-
-  /// Navigates to the logInScreen when the action is triggered.
-  onTapSignInButton(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.logInScreen);
-  }
-
-  /// Navigates to the chatbotScreen when the action is triggered.
-  onTapChatbotButton(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.chatbotScreen);
-  }
-
-  /// Navigates to the rentScreen when the action is triggered.
-  onTapOne(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.rentScreen);
-  }
-
-  /// Navigates to the pgScreen when the action is triggered.
-  onTapTwo(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.pgScreen);
-  }
-
-  /// Navigates to the roomMateScreen when the action is triggered.
-  onTapThree(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.roomMateScreen);
-  }
-
-  /// Navigates to the postProfileScreen when the action is triggered.
-  onTapFour(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.postProfileScreen);
-  }
-
-  /// Navigates to the listPropertyScreen when the action is triggered.
-  onTapOne1(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.listPropertyScreen);
-  }
-
-  /// Navigates to the blogPageScreen when the action is triggered.
-  onTapTwo1(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.blogPageScreen);
-  }
-
-  /// Navigates to the filtersScreen when the action is triggered.
-  onTapStartBookingButton(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.filtersScreen);
-  }
-
-  /// Navigates to the blogPageScreen when the action is triggered.
-  onTapTxtBlog(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.blogPageScreen);
+      height: 40.v,
+      width: 250.h,
+      text: "Start Booking",
+      onPressed: () {
+        Navigator.pushNamed(context,AppRoutes.filtersScreen); // Navigate to filtersScreen
+      },
+    );
   }
 }
+

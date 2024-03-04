@@ -28,12 +28,22 @@ flutter:
     - assets/
     - assets/images/
   fonts: 
+    - family: Comic Neue
+      fonts: 
+        - asset: assets/fonts/ComicNeueRegular.ttf
+          weight: 400
     - family: Lato
       fonts: 
         - asset: assets/fonts/LatoBold.ttf
           weight: 700
         - asset: assets/fonts/LatoRegular.ttf
           weight: 400
+    - family: Inter
+      fonts: 
+        - asset: assets/fonts/InterRegular.ttf
+          weight: 400
+        - asset: assets/fonts/InterMedium.ttf
+          weight: 500
     - family: Linden Hill
       fonts: 
         - asset: assets/fonts/LindenHillRegular.ttf
