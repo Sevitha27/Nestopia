@@ -132,15 +132,14 @@ class PropertyDetailsScreen extends StatelessWidget {
                                         crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                         children: [
-                                          Text("TV",
+                                          Text("1. TV",
                                               style: theme.textTheme.bodyLarge),
                                           SizedBox(height: 4.v),
                                           Text("Flatscreen TV",
                                               style: theme.textTheme.bodySmall)
                                         ]),
                                     CustomImageView(
-                                        imagePath:
-                                        ImageConstant.imgMdiTelevision,
+                                        imagePath: 'assets/images/img_mdi_television.svg',
                                         height: 32.adaptSize,
                                         width: 32.adaptSize,
                                         margin: EdgeInsets.only(
@@ -150,13 +149,13 @@ class PropertyDetailsScreen extends StatelessWidget {
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Fireplace",
+                                  text: "2. Fireplace",
                                   image: ImageConstant.imgMdiFireplace)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Phone",
+                                  text: "3. Phone",
                                   image: ImageConstant.imgMdiPhoneClassic)),
                           SizedBox(height: 8.v),
                           Row(
@@ -167,7 +166,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
                                     children: [
-                                      Text("Work desk",
+                                      Text("4.Work desk",
                                           style: theme.textTheme.bodyLarge),
                                       SizedBox(height: 5.v),
                                       Align(
@@ -187,49 +186,49 @@ class PropertyDetailsScreen extends StatelessWidget {
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Fridge",
+                                  text: "5. Fridge",
                                   image: ImageConstant.imgMdiFridge)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Kettle",
+                                  text: "6. Kettle",
                                   image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Coffee Maker",
+                                  text: "7. Coffee Maker",
                                   image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Dishes",
+                                  text: "8. Dishes",
                                   image: ImageConstant.imgMdiPotSteam)),
                           SizedBox(height: 20.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Washing Machine",
+                                  text: "9. Washing Machine",
                                   image: ImageConstant.imgMdiKettle)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Dryer",
+                                  text: "10. Dryer",
                                   image: ImageConstant.imgMdiTumbleDryer)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Iron",
+                                  text: "11. Iron",
                                   image: ImageConstant.imgMdiCurling)),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Wardrobe",
+                                  text: "12. Wardrobe",
                                   image: ImageConstant.imgMdiWardrobe)),
                           SizedBox(height: 80.v),
                           Text("Location",

@@ -30,7 +30,7 @@ class PgScreen extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
 
-              title: Text('PG'),
+              title: Text('Nestopia'),
               centerTitle: true,
               actions: [
                 AppbarTrailingImage(
