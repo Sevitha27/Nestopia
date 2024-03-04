@@ -72,8 +72,8 @@ class PgScreen extends StatelessWidget {
                           _buildOneRow3(context),
                           SizedBox(height: 20.v),
                           _buildTwoRow3(context),
-                          SizedBox(height: 40.v),
-                          _buildShowMoreApartments(context),
+                          // SizedBox(height: 40.v),
+                          // _buildShowMoreApartments(context),
                           _buildFooter(context)
                         ]))))));
   }
@@ -807,12 +807,12 @@ class PgScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildShowMoreApartments(BuildContext context) {
-    return CustomElevatedButton(
-        width: 230.h,
-        text: "Show more apartments",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildShowMoreApartments(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 230.h,
+  //       text: "Show more apartments",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   // Widget _buildEmail(BuildContext context) {
