@@ -14,8 +14,12 @@ dependencies:
   google_maps_flutter: ^2.5.0
   intl: ^0.18.0
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
   firebase_core: ^2.17.0
+=======
+  firebase_core: ^2.25.5
+>>>>>>> Stashed changes
   firebase_auth: ^4.10.1
   sign_in_button: ^3.2.0
   firebase_analytics: ^10.5.1

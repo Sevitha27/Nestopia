@@ -8,6 +8,26 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_phone_number.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import '../list_property_screen/widgets/one_item_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'dart:developer';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_drop_down.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+import 'package:dotted_border/dotted_border.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 
 // ignore_for_file: must_be_immutable
 class PostProfileScreen extends StatelessWidget {
@@ -25,6 +45,24 @@ class PostProfileScreen extends StatelessWidget {
 
   TextEditingController emailEditTextController1 = TextEditingController();
 
+  TextEditingController roommates = TextEditingController();
+
+  TextEditingController bedrooms = TextEditingController();
+
+  TextEditingController bathroom = TextEditingController();
+
+  TextEditingController parking = TextEditingController();
+
+  TextEditingController elevator = TextEditingController();
+
+  TextEditingController washing = TextEditingController();
+
+  List<String> selection = [
+    "You are a flat owner",
+    "You are a PG owner",
+    "You are looking for a Flat/PG/Flatmate"
+  ];
+
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
@@ -32,7 +70,27 @@ class PostProfileScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
+<<<<<<< Updated upstream
             appBar: _buildAppBar(context),
+=======
+            appBar: AppBar(
+              leading: AppbarLeadingImage(
+                onTap: () {
+                  Navigator.pop(context); // Implement the back functionality
+                },
+              ),
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(
+                        context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
+>>>>>>> Stashed changes
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -66,7 +124,7 @@ class PostProfileScreen extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: appTheme.blueGray50,
                                             borderRadius:
-                                            BorderRadius.circular(14.h))),
+                                                BorderRadius.circular(14.h))),
                                     Padding(
                                         padding: EdgeInsets.only(
                                             left: 10.h, top: 4.v, bottom: 3.v),
@@ -94,9 +152,22 @@ class PostProfileScreen extends StatelessWidget {
                           SizedBox(height: 12.v),
                           _buildEmailEditText(context),
                           SizedBox(height: 12.v),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 16.h),
-                              child: _buildPhoneNumber(context)),
+                          _buildPhoneNumber(context),
+                          // Padding(
+                          //     padding: EdgeInsets.symmetric(horizontal: 16.h),
+                          //     child: _buildPhoneNumber(context)),
+                          SizedBox(height: 12.v),
+                          _buildRoomMates(context),
+                          SizedBox(height: 12.v),
+                          _buildBedroom(context),
+                          SizedBox(height: 12.v),
+                          _buildBathroom(context),
+                          SizedBox(height: 12.v),
+                          _buildParking(context),
+                          SizedBox(height: 12.v),
+                          _buildElevator(context),
+                          SizedBox(height: 12.v),
+                          _buildWashing(context),
                           SizedBox(height: 12.v),
                           _buildMessageEditText(context),
                           SizedBox(height: 24.v),
@@ -106,6 +177,7 @@ class PostProfileScreen extends StatelessWidget {
                         ]))))));
   }
 
+<<<<<<< Updated upstream
   /// Section Widget
   PreferredSizeWidget _buildAppBar(BuildContext context) {
     return CustomAppBar(
@@ -125,6 +197,8 @@ class PostProfileScreen extends StatelessWidget {
   }
 
   /// Section Widget
+=======
+>>>>>>> Stashed changes
   Widget _buildOneRow(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 28.h),
@@ -147,7 +221,7 @@ class PostProfileScreen extends StatelessWidget {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h),
         child: CustomTextFormField(
-            controller: nameEditTextController, hintText: "Name"));
+            controller: nameEditTextController, hintText: "Name*"));
   }
 
   /// Section Widget
@@ -156,8 +230,52 @@ class PostProfileScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16.h),
         child: CustomTextFormField(
             controller: emailEditTextController,
-            hintText: "Email",
+            hintText: "Email*",
             textInputType: TextInputType.emailAddress));
+  }
+
+  Widget _buildRoomMates(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: roommates,
+            hintText: "Enter Number of roommates required*"));
+  }
+
+  Widget _buildBedroom(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: bedrooms, hintText: "Number of Bedrooms*"));
+  }
+
+  Widget _buildBathroom(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: bathroom, hintText: "Number of Bathrooms*"));
+  }
+
+  Widget _buildParking(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: parking, hintText: "Is Parking available? (Yes/No)*"));
+  }
+
+  Widget _buildElevator(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: elevator,
+            hintText: "Is Elevator available? (Yes/No)*"));
+  }
+
+  Widget _buildWashing(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
+        child: CustomTextFormField(
+            controller: washing, hintText: "Number of Washing Machines*"));
   }
 
   /// Section Widget
@@ -182,17 +300,82 @@ class PostProfileScreen extends StatelessWidget {
             maxLines: 4));
   }
 
+  Future<void> sendData(
+      String name,
+      String email,
+      String phoneNumber,
+      String roommates,
+      String bedrooms,
+      String bathrooms,
+      String parking,
+      String elevator,
+      String wash,
+      String message) async {
+    var uid = FirebaseAuth.instance.currentUser?.uid;
+
+    //final CollectionReference collection = FirebaseFirestore.instance.collection('listProperty');
+    log("collection print");
+    try {
+      await FirebaseFirestore.instance
+          .collection("roommateListing")
+          .doc(uid)
+          .set({
+        'name': name,
+        'email': email,
+        'phone': phoneNumber,
+        'roommates': roommates,
+        'bedrooms': bedrooms,
+        'bathrooms': bathrooms,
+        'parking': parking,
+        'elevator': elevator,
+        'washing': wash,
+        'message': message,
+      }).then((value) {
+        log("success");
+      });
+    } catch (e) {
+      log("catch exception");
+      log(e.toString());
+    }
+  }
+
+  void onSubmit(BuildContext context) async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+
+      try {
+        // Your Firebase Firestore integration here
+        log("printhingg");
+        await sendData(
+            nameEditTextController.text,
+            emailEditTextController.text,
+            phoneNumberController.text,
+            roommates.text,
+            bedrooms.text,
+            bathroom.text,
+            parking.text,
+            elevator.text,
+            washing.text,
+            messageEditTextController.text);
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Data submitted successfully')),
+        );
+      } catch (e) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error submitting form: $e')),
+        );
+      }
+    }
+  }
+
   /// Section Widget
   Widget _buildUploadButton(BuildContext context) {
     return CustomElevatedButton(
-        width: 130.h,
-        text: "UPLOAD",
-        margin: EdgeInsets.only(left: 97.h),
+        height: 48.v,
+        width: 131.h,
+        text: "Upload",
         buttonStyle: CustomButtonStyles.fillPrimary,
-        onPressed: () {
-          onTapUploadButton(context);
-        },
-        alignment: Alignment.centerLeft);
+        onPressed: () => onSubmit(context));
   }
 
   /// Section Widget
@@ -284,7 +467,7 @@ class PostProfileScreen extends StatelessWidget {
                         child: Padding(
                             padding: EdgeInsets.only(right: 119.h),
                             child:
-                            Text("FAQ", style: theme.textTheme.bodyLarge))),
+                                Text("FAQ", style: theme.textTheme.bodyLarge))),
                     SizedBox(height: 10.v),
                     Align(
                         alignment: Alignment.centerRight,
@@ -310,15 +493,15 @@ class PostProfileScreen extends StatelessWidget {
                                       padding: EdgeInsets.only(left: 40.h),
                                       child: Column(
                                           crossAxisAlignment:
-                                          CrossAxisAlignment.start,
+                                              CrossAxisAlignment.start,
                                           children: [
                                             Text("Terms of Service",
                                                 style:
-                                                theme.textTheme.bodyLarge),
+                                                    theme.textTheme.bodyLarge),
                                             SizedBox(height: 13.v),
                                             Text("Privacy Policy",
                                                 style:
-                                                theme.textTheme.bodyLarge)
+                                                    theme.textTheme.bodyLarge)
                                           ]))
                                 ]))),
                     SizedBox(height: 39.v),
