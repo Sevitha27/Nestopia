@@ -58,9 +58,9 @@ class RoomMateScreen extends StatelessWidget {
                           _buildSortResult(context),
                           SizedBox(height: 10.v),
                           _buildMetropolitanManor(context),
-                          SizedBox(height: 40.v),
-                          _buildShowMoreOptions(context),
-                          SizedBox(height: 10.v),
+                          // SizedBox(height: 40.v),
+                          // _buildShowMoreOptions(context),
+                          // SizedBox(height: 10.v),
                           _buildFooter(context)
                         ]))))));
   }
@@ -210,12 +210,12 @@ class RoomMateScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildShowMoreOptions(BuildContext context) {
-    return CustomElevatedButton(
-        width: 202.h,
-        text: "Show more options",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildShowMoreOptions(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 202.h,
+  //       text: "Show more options",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   // Widget _buildEmail(BuildContext context) {
@@ -227,12 +227,12 @@ class RoomMateScreen extends StatelessWidget {
   // }
 
   /// Section Widget
-  Widget _buildSubscribe(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildSubscribe(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 134.h,
+  //       text: "Subscribe",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   Widget _buildFooter(BuildContext context) {
@@ -358,9 +358,9 @@ class RoomMateScreen extends StatelessWidget {
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
                     //_buildEmail(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribe(context),
-                    SizedBox(height: 20.v)
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribe(context),
+                    // SizedBox(height: 20.v)
                   ]))),
           Align(
               alignment: Alignment.bottomCenter,

@@ -33,11 +33,11 @@ class PostProfileScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+              // leading: AppbarLeadingImage(
+              //   onTap: () {
+              //     Navigator.pop(context); // Implement the back functionality
+              //   },
+              // ),
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -165,7 +165,7 @@ class PostProfileScreen extends StatelessWidget {
             controller: nameEditTextController, hintText: "Name"));
   }
 
-  /// Section Widget
+  // /// Section Widget
   Widget _buildEmailEditText(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 16.h),
@@ -211,21 +211,21 @@ class PostProfileScreen extends StatelessWidget {
   }
 
   /// Section Widget
-  Widget _buildEmailEditText1(BuildContext context) {
-    return CustomTextFormField(
-        controller: emailEditTextController1,
-        hintText: "Email address",
-        textInputAction: TextInputAction.done,
-        textInputType: TextInputType.emailAddress);
-  }
+  // Widget _buildEmailEditText1(BuildContext context) {
+  //   return CustomTextFormField(
+  //       controller: emailEditTextController1,
+  //       hintText: "Email address",
+  //       textInputAction: TextInputAction.done,
+  //       textInputType: TextInputType.emailAddress);
+  // }
 
   /// Section Widget
-  Widget _buildSubscribeButton(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildSubscribeButton(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 134.h,
+  //       text: "Subscribe",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   Widget _buildFooter(BuildContext context) {
@@ -349,11 +349,11 @@ class PostProfileScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: theme.textTheme.bodyLarge!
                                 .copyWith(height: 1.25))),
-                    SizedBox(height: 17.v),
-                    _buildEmailEditText1(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribeButton(context),
-                    SizedBox(height: 20.v)
+                    // SizedBox(height: 17.v),
+                    // _buildEmailEditText1(context),
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribeButton(context),
+                    // SizedBox(height: 20.v)
                   ]))),
           Align(
               alignment: Alignment.bottomCenter,
