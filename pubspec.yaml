@@ -27,6 +27,7 @@ flutter:
   assets: 
     - assets/
     - assets/images/
+   
   fonts: 
     - family: Comic Neue
       fonts: 
