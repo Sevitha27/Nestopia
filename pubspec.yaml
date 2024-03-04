@@ -13,6 +13,17 @@ dependencies:
   calendar_date_picker2: ^0.5.3
   google_maps_flutter: ^2.5.0
   intl: ^0.18.0
+<<<<<<< Updated upstream
+=======
+  firebase_core: ^2.17.0
+  firebase_auth: ^4.10.1
+  sign_in_button: ^3.2.0
+  firebase_analytics: ^10.5.1
+  google_sign_in: ^6.2.1
+  cloud_firestore: ^4.15.4
+  cupertino_icons: ^1.0.2
+  shared_preferences: ^2.0.17
+>>>>>>> Stashed changes
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
