@@ -113,89 +113,8 @@ class ListPropertyScreen extends StatelessWidget {
                               imagePath: ImageConstant.imgEvaBookFill,
                               height: 40.adaptSize,
                               width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Consequat risus",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 335.h,
-                              margin: EdgeInsets.symmetric(horizontal: 19.h),
-                              child: Text(
-                                  "Euismod commodo feugiat purus egestas diam. Facilisi sed senectus consequat risus. Porta purus nec dui odio vehicula.",
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 19.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaAwardFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Morbi pulvinar",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 334.h,
-                              margin: EdgeInsets.only(left: 20.h, right: 19.h),
-                              child: Text(
-                                  "Eu vulputate mi cras quam lectus. Ut ut dignissim amet dignissim gravida sit ullamcorper lectus.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 18.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaBookFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Turpis elit",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 317.h,
-                              margin: EdgeInsets.only(left: 28.h, right: 29.h),
-                              child: Text(
-                                  "Arcu venenatis id dignissim massa ipsum. Viverra mi habitant urna at elit dignissim cursus ut facilisi.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 18.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaAwardFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Faucibus egestas",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 333.h,
-                              margin: EdgeInsets.symmetric(horizontal: 20.h),
-                              child: Text(
-                                  "Vehicula arcu, felis, et urna, nunc, ut eget pellentesque scelerisque. Accumsan et velit nibh tempor.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 30.v),
-                          Text("Pricing", style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 13.v),
-                          Text(
-                              "Compare our pricing model to high street agents",
-                              style: theme.textTheme.bodyLarge),
-                          SizedBox(height: 38.v),
-                          _buildOne1(context),
-                          SizedBox(height: 39.v),
-                          Text("Vs", style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 39.v),
-                          _buildThree(context),
+                         
+                          
                           SizedBox(
                               width: 231.h,
                               child: Text("Frequently Asked Questions",
@@ -268,7 +187,7 @@ class ListPropertyScreen extends StatelessWidget {
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
                                   dynamicText: "how to find help?")),
-                          SizedBox(height: 47.v),
+                          
                           _buildFooter(context)
                         ]))))));
   }
@@ -869,12 +788,12 @@ class ListPropertyScreen extends StatelessWidget {
   // }
 
   /// Section Widget
-  Widget _buildSubscribe(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildSubscribe(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 134.h,
+  //       text: "Subscribe",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   Widget _buildFooter(BuildContext context) {
@@ -888,13 +807,13 @@ class ListPropertyScreen extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 16.h),
                   decoration: AppDecoration.white,
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    CustomImageView(
-                        imagePath: ImageConstant.imgCalendar,
-                        height: 44.v,
-                        width: 46.h,
-                        onTap: () {
-                          onTapImgCalendar(context);
-                        }),
+                    // CustomImageView(
+                    //     imagePath: ImageConstant.imgCalendar,
+                    //     height: 44.v,
+                    //     width: 46.h,
+                    //     onTap: () {
+                    //       onTapImgCalendar(context);
+                    //     }),
                     SizedBox(height: 54.v),
                     Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -995,9 +914,9 @@ class ListPropertyScreen extends StatelessWidget {
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
                    // _buildEmail1(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribe(context),
-                    SizedBox(height: 20.v)
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribe(context),
+                    // SizedBox(height: 20.v)
                   ]))),
           Align(
               alignment: Alignment.bottomCenter,
