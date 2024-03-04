@@ -15,7 +15,7 @@ class PropertylistItemWidget extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.only(top: 1.v),
         child: Text(
-          "52 results for your filters",
+          "",
           style: theme.textTheme.bodyLarge,
         ),
       ),

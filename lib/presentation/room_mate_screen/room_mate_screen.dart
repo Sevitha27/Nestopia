@@ -177,7 +177,7 @@ class RoomMateScreen extends StatelessWidget {
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           Padding(
               padding: EdgeInsets.only(top: 1.v),
-              child: Text("52 results for your filters",
+              child: Text("",
                   style: theme.textTheme.bodyLarge)),
           CustomDropDown(
               width: 84.h,

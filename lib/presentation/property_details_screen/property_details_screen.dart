@@ -46,8 +46,8 @@ class PropertyDetailsScreen extends StatelessWidget {
                         child: Column(children: [
                           _buildFirstScreen1(context),
                           SizedBox(height: 24.v),
-                          _buildSaveButton(context),
-                          SizedBox(height: 18.v),
+                          // _buildSaveButton(context),
+                          // SizedBox(height: 18.v),
                           Text("The Metropolitan Manor",
                               style: theme.textTheme.titleMedium),
                           SizedBox(height: 16.v),
