@@ -19,6 +19,7 @@ dependencies:
   firebase_analytics: ^10.5.1
   google_sign_in: ^6.2.1
   cloud_firestore: ^4.15.4
+  pay: ^2.0.0
 dev_dependencies: 
   flutter_test: 
     sdk: flutter
