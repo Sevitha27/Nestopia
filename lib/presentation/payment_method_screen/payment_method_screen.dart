@@ -81,7 +81,7 @@ class PaymentMethodScreen extends StatelessWidget {
 
   /// Navigates to the checkoutPageB1Screen when the action is triggered.
   onTapCard(BuildContext context) {
-    Navigator.pushNamed(context, AppRoutes.checkoutPageB1Screen);
+    Navigator.pushNamed(context, AppRoutes.confirmationScreen);
   }
 
   /// Navigates to the confirmationScreen when the action is triggered.
