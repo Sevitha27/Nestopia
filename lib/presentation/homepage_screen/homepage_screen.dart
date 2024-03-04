@@ -118,7 +118,7 @@ class HomepageScreen extends StatelessWidget {
                             Padding(
                                 padding: EdgeInsets.only(
                                     top: 1.v, bottom: 62.v),
-                                child: Text("               company",
+                                child: Text("               Company",
                                     style: theme.textTheme.titleMedium)),
                             Padding(
                                 padding: EdgeInsets.only(right: 50.h),
@@ -130,11 +130,11 @@ class HomepageScreen extends StatelessWidget {
                                           style:
                                           theme.textTheme.bodyLarge),
                                       SizedBox(height: 11.v),
-                                      Text("               about us",
+                                      Text("               About us",
                                           style:
                                           theme.textTheme.bodyLarge),
                                       SizedBox(height: 12.v),
-                                      Text("               our team",
+                                      Text("               Our Team",
                                           style:
                                           theme.textTheme.bodyLarge)
                                     ]))
@@ -153,7 +153,7 @@ class HomepageScreen extends StatelessWidget {
                                     Padding(
                                         padding: EdgeInsets.only(
                                             top: 1.v, bottom: 32.v),
-                                        child: Text("privacy",
+                                        child: Text("Privacy",
                                             style: theme
                                                 .textTheme.titleMedium)),
                                     Padding(
@@ -164,12 +164,12 @@ class HomepageScreen extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                             children: [
                                               Text(
-                                                  "terms of service",
+                                                  "Terms of Service",
                                                   style: theme.textTheme
                                                       .bodyLarge),
                                               SizedBox(height: 13.v),
                                               Text(
-                                                  "privacy policy",
+                                                  "Privacy Policy",
                                                   style: theme.textTheme
                                                       .bodyLarge)
                                             ]))
@@ -183,7 +183,7 @@ class HomepageScreen extends StatelessWidget {
                       //SizedBox(height: 50.v),
                       //_buildSubscribe(context),
                       SizedBox(height: 35.v),
-                      Text("Contact number:1234567890",
+                      Text("Contact number:+91 9855194269",
                           style: CustomTextStyles.titleMediumBlack900),
                       //SizedBox(height: 51.v),
                       Align(
@@ -242,7 +242,7 @@ class HomepageScreen extends StatelessWidget {
     return CustomElevatedButton(
       height: 30.v,
       width: 97.h,
-      text: "Sign in",
+      text: "Sign In",
       onPressed: () {
         Navigator.pushNamed(context,AppRoutes.logInScreen);
       },
