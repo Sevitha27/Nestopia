@@ -824,12 +824,12 @@ class PgScreen extends StatelessWidget {
   // }
 
   /// Section Widget
-  Widget _buildSubscribe(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildSubscribe(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 134.h,
+  //       text: "Subscribe",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   Widget _buildFooter(BuildContext context) {
@@ -955,9 +955,9 @@ class PgScreen extends StatelessWidget {
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
                     //_buildEmail(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribe(context),
-                    SizedBox(height: 20.v)
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribe(context),
+                    // SizedBox(height: 20.v)
                   ]))),
           Align(
               alignment: Alignment.bottomCenter,

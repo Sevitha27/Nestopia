@@ -329,7 +329,7 @@ class HomepageScreen extends StatelessWidget {
   Widget _buildBlogs(BuildContext context) {
     return CustomElevatedButton(
       height: 75.v,
-      text: "BLogs",
+      text: "Blogs",
       margin: EdgeInsets.only(left: 14.h, right: 18.h),
       buttonStyle: CustomButtonStyles.fillGreen,
       buttonTextStyle: CustomTextStyles.titleMediumBlack900,

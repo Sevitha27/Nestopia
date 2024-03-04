@@ -484,12 +484,12 @@ class PropertyDetailsScreen extends StatelessWidget {
 
 
   /// Section Widget
-  Widget _buildSubscribeButton(BuildContext context) {
-    return CustomElevatedButton(
-        width: 134.h,
-        text: "Subscribe",
-        buttonStyle: CustomButtonStyles.fillPrimary);
-  }
+  // Widget _buildSubscribeButton(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       width: 134.h,
+  //       text: "Subscribe",
+  //       buttonStyle: CustomButtonStyles.fillPrimary);
+  // }
 
   /// Section Widget
   Widget _buildEmailStack(BuildContext context) {
@@ -600,9 +600,9 @@ class PropertyDetailsScreen extends StatelessWidget {
                                 .copyWith(height: 1.25))),
                     SizedBox(height: 17.v),
                     // _buildEmailEditText(context),
-                    SizedBox(height: 20.v),
-                    _buildSubscribeButton(context),
-                    SizedBox(height: 40.v),
+                    // SizedBox(height: 20.v),
+                    // _buildSubscribeButton(context),
+                    // SizedBox(height: 40.v),
                     Text("Contact number: 02033074477",
                         style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),

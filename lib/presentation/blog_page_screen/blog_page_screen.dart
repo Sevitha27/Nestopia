@@ -21,11 +21,11 @@ class BlogPageScreen extends StatelessWidget {
         child: Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: AppBar(
-              leading: AppbarLeadingImage(
-                onTap: () {
-                  Navigator.pop(context); // Implement the back functionality
-                },
-              ),
+              // leading: AppbarLeadingImage(
+              //   onTap: () {
+              //     Navigator.pop(context); // Implement the back functionality
+              //   },
+              // ),
               title: Text('Nestopia'),
               centerTitle: true,
               actions: [
@@ -54,12 +54,12 @@ class BlogPageScreen extends StatelessWidget {
                           _buildImageTitle(context),
                           SizedBox(height: 43.v),
                           _buildFiveComponent(context),
-                          SizedBox(height: 43.v),
-                          CustomElevatedButton(
-                              width: 141.h,
-                              text: "Read more",
-                              buttonStyle: CustomButtonStyles.fillPrimary),
-                          SizedBox(height: 70.v),
+                          // SizedBox(height: 43.v),
+                          // CustomElevatedButton(
+                          //     width: 141.h,
+                          //     text: "Read more",
+                          //     buttonStyle: CustomButtonStyles.fillPrimary),
+                          // SizedBox(height: 70.v),
                           _buildFooter(context)
                         ]))))));
   }
@@ -263,13 +263,14 @@ class BlogPageScreen extends StatelessWidget {
                     //     hintText: "Email address",
                     //     textInputAction: TextInputAction.done,
                     //     textInputType: TextInputType.emailAddress),
-                    SizedBox(height: 20.v),
-                    CustomElevatedButton(
-                        width: 134.h,
-                        text: "Subscribe",
-                        buttonStyle: CustomButtonStyles.fillPrimary),
-                    SizedBox(height: 20.v)
-                  ]))),
+                    // SizedBox(height: 20.v),
+                    // // CustomElevatedButton(
+                    // //     width: 134.h,
+                    // //     text: "Subscribe",
+                    // //     buttonStyle: CustomButtonStyles.fillPrimary),
+                    // SizedBox(height: 20.v)
+                  ]))
+                  ),
           Align(
               alignment: Alignment.bottomCenter,
               child: Padding(
