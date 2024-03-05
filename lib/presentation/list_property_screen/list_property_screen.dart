@@ -62,140 +62,140 @@ class ListPropertyScreen extends StatelessWidget {
                         child: Column(children: [
                           _buildFirstScreen(context),
                           SizedBox(height: 80.v),
-                          Container(
-                              width: 276.h,
-                              margin: EdgeInsets.only(left: 50.h, right: 47.h),
-                              child: Text("Better than Property Management",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: theme.textTheme.headlineLarge!
-                                      .copyWith(height: 1.20))),
-                          SizedBox(height: 9.v),
-                          Container(
-                              width: 338.h,
-                              margin: EdgeInsets.only(left: 16.h, right: 18.h),
-                              child: Text(
-                                  "We work with 100+  companies to meet accommodation needs in London. Offer a dedicated booking manager that can help to find properties for your needs.",
-                                  maxLines: 4,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: theme.textTheme.bodyLarge!
-                                      .copyWith(height: 1.25))),
-                          SizedBox(height: 37.v),
-                          _buildOne(context),
-                          SizedBox(height: 140.v),
-                          Text("How it Works",
-                              textAlign: TextAlign.center,
-                              style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 39.v),
-                          _buildPoints(context),
-                          SizedBox(height: 13.v),
-                          Text("Corporate Partnerships",
-                              style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 12.v),
-                          Container(
-                              width: 338.h,
-                              margin: EdgeInsets.only(left: 16.h, right: 18.h),
-                              child: Text(
-                                  "We work with 100+  companies to meet accommodation needs in London. Offer a dedicated booking manager that can help to find properties for your needs.",
-                                  maxLines: 4,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: theme.textTheme.bodyLarge!
-                                      .copyWith(height: 1.25))),
-                          SizedBox(height: 37.v),
-                          _buildBefore(context),
-                          SizedBox(height: 20.v),
-                          _buildAfter(context),
-                          SizedBox(height: 40.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaBookFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Consequat risus",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 335.h,
-                              margin: EdgeInsets.symmetric(horizontal: 19.h),
-                              child: Text(
-                                  "Euismod commodo feugiat purus egestas diam. Facilisi sed senectus consequat risus. Porta purus nec dui odio vehicula.",
-                                  maxLines: 3,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 19.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaAwardFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Morbi pulvinar",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 334.h,
-                              margin: EdgeInsets.only(left: 20.h, right: 19.h),
-                              child: Text(
-                                  "Eu vulputate mi cras quam lectus. Ut ut dignissim amet dignissim gravida sit ullamcorper lectus.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 18.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaBookFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Turpis elit",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 317.h,
-                              margin: EdgeInsets.only(left: 28.h, right: 29.h),
-                              child: Text(
-                                  "Arcu venenatis id dignissim massa ipsum. Viverra mi habitant urna at elit dignissim cursus ut facilisi.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 18.v),
-                          CustomImageView(
-                              imagePath: ImageConstant.imgEvaAwardFill,
-                              height: 40.adaptSize,
-                              width: 40.adaptSize),
-                          SizedBox(height: 13.v),
-                          Text("Faucibus egestas",
-                              style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 7.v),
-                          Container(
-                              width: 333.h,
-                              margin: EdgeInsets.symmetric(horizontal: 20.h),
-                              child: Text(
-                                  "Vehicula arcu, felis, et urna, nunc, ut eget pellentesque scelerisque. Accumsan et velit nibh tempor.",
-                                  maxLines: 2,
-                                  overflow: TextOverflow.ellipsis,
-                                  textAlign: TextAlign.center,
-                                  style: CustomTextStyles.bodyMediumGray900
-                                      .copyWith(height: 1.29))),
-                          SizedBox(height: 30.v),
-                          Text("Pricing", style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 13.v),
-                          Text(
-                              "Compare our pricing model to high street agents",
-                              style: theme.textTheme.bodyLarge),
-                          SizedBox(height: 38.v),
-                          _buildOne1(context),
-                          SizedBox(height: 39.v),
-                          Text("Vs", style: theme.textTheme.headlineSmall),
-                          SizedBox(height: 39.v),
-                          _buildThree(context),
+                          // Container(
+                          //     width: 276.h,
+                          //     margin: EdgeInsets.only(left: 50.h, right: 47.h),
+                          //     child: Text("Better than Property Management",
+                          //         maxLines: 2,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: theme.textTheme.headlineLarge!
+                          //             .copyWith(height: 1.20))),
+                          // SizedBox(height: 9.v),
+                          // Container(
+                          //     width: 338.h,
+                          //     margin: EdgeInsets.only(left: 16.h, right: 18.h),
+                          //     child: Text(
+                          //         "We work with 100+  companies to meet accommodation needs in London. Offer a dedicated booking manager that can help to find properties for your needs.",
+                          //         maxLines: 4,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: theme.textTheme.bodyLarge!
+                          //             .copyWith(height: 1.25))),
+                          // SizedBox(height: 37.v),
+                          // _buildOne(context),
+                          // SizedBox(height: 140.v),
+                          // Text("How it Works",
+                          //     textAlign: TextAlign.center,
+                          //     style: theme.textTheme.headlineLarge),
+                          // SizedBox(height: 39.v),
+                          // _buildPoints(context),
+                          // SizedBox(height: 13.v),
+                          // Text("Corporate Partnerships",
+                          //     style: theme.textTheme.headlineLarge),
+                          // SizedBox(height: 12.v),
+                          // Container(
+                          //     width: 338.h,
+                          //     margin: EdgeInsets.only(left: 16.h, right: 18.h),
+                          //     child: Text(
+                          //         "We work with 100+  companies to meet accommodation needs in London. Offer a dedicated booking manager that can help to find properties for your needs.",
+                          //         maxLines: 4,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: theme.textTheme.bodyLarge!
+                          //             .copyWith(height: 1.25))),
+                          // SizedBox(height: 37.v),
+                          // _buildBefore(context),
+                          // SizedBox(height: 20.v),
+                          // _buildAfter(context),
+                          // SizedBox(height: 40.v),
+                          // CustomImageView(
+                          //     imagePath: ImageConstant.imgEvaBookFill,
+                          //     height: 40.adaptSize,
+                          //     width: 40.adaptSize),
+                          // SizedBox(height: 13.v),
+                          // Text("Consequat risus",
+                          //     style: theme.textTheme.headlineSmall),
+                          // SizedBox(height: 7.v),
+                          // Container(
+                          //     width: 335.h,
+                          //     margin: EdgeInsets.symmetric(horizontal: 19.h),
+                          //     child: Text(
+                          //         "Euismod commodo feugiat purus egestas diam. Facilisi sed senectus consequat risus. Porta purus nec dui odio vehicula.",
+                          //         maxLines: 3,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: CustomTextStyles.bodyMediumGray900
+                          //             .copyWith(height: 1.29))),
+                          // SizedBox(height: 19.v),
+                          // CustomImageView(
+                          //     imagePath: ImageConstant.imgEvaAwardFill,
+                          //     height: 40.adaptSize,
+                          //     width: 40.adaptSize),
+                          // SizedBox(height: 13.v),
+                          // Text("Morbi pulvinar",
+                          //     style: theme.textTheme.headlineSmall),
+                          // SizedBox(height: 7.v),
+                          // Container(
+                          //     width: 334.h,
+                          //     margin: EdgeInsets.only(left: 20.h, right: 19.h),
+                          //     child: Text(
+                          //         "Eu vulputate mi cras quam lectus. Ut ut dignissim amet dignissim gravida sit ullamcorper lectus.",
+                          //         maxLines: 2,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: CustomTextStyles.bodyMediumGray900
+                          //             .copyWith(height: 1.29))),
+                          // SizedBox(height: 18.v),
+                          // CustomImageView(
+                          //     imagePath: ImageConstant.imgEvaBookFill,
+                          //     height: 40.adaptSize,
+                          //     width: 40.adaptSize),
+                          // SizedBox(height: 13.v),
+                          // Text("Turpis elit",
+                          //     style: theme.textTheme.headlineSmall),
+                          // SizedBox(height: 7.v),
+                          // Container(
+                          //     width: 317.h,
+                          //     margin: EdgeInsets.only(left: 28.h, right: 29.h),
+                          //     child: Text(
+                          //         "Arcu venenatis id dignissim massa ipsum. Viverra mi habitant urna at elit dignissim cursus ut facilisi.",
+                          //         maxLines: 2,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: CustomTextStyles.bodyMediumGray900
+                          //             .copyWith(height: 1.29))),
+                          // SizedBox(height: 18.v),
+                          // CustomImageView(
+                          //     imagePath: ImageConstant.imgEvaAwardFill,
+                          //     height: 40.adaptSize,
+                          //     width: 40.adaptSize),
+                          // SizedBox(height: 13.v),
+                          // Text("Faucibus egestas",
+                          //     style: theme.textTheme.headlineSmall),
+                          // SizedBox(height: 7.v),
+                          // Container(
+                          //     width: 333.h,
+                          //     margin: EdgeInsets.symmetric(horizontal: 20.h),
+                          //     child: Text(
+                          //         "Vehicula arcu, felis, et urna, nunc, ut eget pellentesque scelerisque. Accumsan et velit nibh tempor.",
+                          //         maxLines: 2,
+                          //         overflow: TextOverflow.ellipsis,
+                          //         textAlign: TextAlign.center,
+                          //         style: CustomTextStyles.bodyMediumGray900
+                          //             .copyWith(height: 1.29))),
+                          // SizedBox(height: 30.v),
+                          // Text("Pricing", style: theme.textTheme.headlineLarge),
+                          // SizedBox(height: 13.v),
+                          // Text(
+                          //     "Compare our pricing model to high street agents",
+                          //     style: theme.textTheme.bodyLarge),
+                          // SizedBox(height: 38.v),
+                          // _buildOne1(context),
+                          // SizedBox(height: 39.v),
+                          // Text("Vs", style: theme.textTheme.headlineSmall),
+                          // SizedBox(height: 39.v),
+                          // _buildThree(context),
                           SizedBox(
                               width: 231.h,
                               child: Text("Frequently Asked Questions",
@@ -267,7 +267,7 @@ class ListPropertyScreen extends StatelessWidget {
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 16.h),
                               child: _buildQuestion4(context,
-                                  dynamicText: "how to find help?")),
+                                  dynamicText: "How to find help?")),
                           SizedBox(height: 47.v),
                           _buildFooter(context)
                         ]))))));
@@ -446,46 +446,46 @@ class ListPropertyScreen extends StatelessWidget {
                         SizedBox(height: 16.v),
                         _buildPhoneNumber(context),
                         SizedBox(height: 26.v),
-                        Align(
-                            alignment: Alignment.centerLeft,
-                            child: Text("Property details",
-                                style: theme.textTheme.titleLarge)),
-                        SizedBox(height: 13.v),
-                        CustomDropDown(
-                            icon: Container(
-                                margin:
-                                EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-                                child: CustomImageView(
-                                    imagePath:
-                                    ImageConstant.imgEvaarrowdownfill,
-                                    height: 20.adaptSize,
-                                    width: 20.adaptSize)),
-                            hintText: "Area *",
-                            hintStyle: CustomTextStyles.bodyLargeBluegray700,
-                            items: dropdownItemList,
-                            borderDecoration: DropDownStyleHelper.fillOnPrimary,
-                            filled: true,
-                            fillColor:
-                            theme.colorScheme.onPrimary.withOpacity(1),
-                            onChanged: (value) {}),
-                        SizedBox(height: 16.v),
-                        CustomDropDown(
-                            icon: Container(
-                                margin:
-                                EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
-                                child: CustomImageView(
-                                    imagePath:
-                                    ImageConstant.imgEvaarrowdownfill,
-                                    height: 20.adaptSize,
-                                    width: 20.adaptSize)),
-                            hintText: "# of bedrooms *",
-                            hintStyle: CustomTextStyles.bodyLargeBluegray700,
-                            items: dropdownItemList1,
-                            borderDecoration: DropDownStyleHelper.fillOnPrimary,
-                            filled: true,
-                            fillColor:
-                            theme.colorScheme.onPrimary.withOpacity(1),
-                            onChanged: (value) {}),
+                        // Align(
+                        //     alignment: Alignment.centerLeft,
+                        //     child: Text("Property detail",
+                        //         style: theme.textTheme.titleLarge)),
+                        // SizedBox(height: 13.v),
+                        // CustomDropDown(
+                        //     icon: Container(
+                        //         margin:
+                        //         EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
+                        //         child: CustomImageView(
+                        //             imagePath:
+                        //             ImageConstant.imgEvaarrowdownfill,
+                        //             height: 20.adaptSize,
+                        //             width: 20.adaptSize)),
+                        //     hintText: "Area *",
+                        //     hintStyle: CustomTextStyles.bodyLargeBluegray700,
+                        //     items: dropdownItemList,
+                        //     borderDecoration: DropDownStyleHelper.fillOnPrimary,
+                        //     filled: true,
+                        //     fillColor:
+                        //     theme.colorScheme.onPrimary.withOpacity(1),
+                        //     onChanged: (value) {}),
+                        // SizedBox(height: 16.v),
+                        // CustomDropDown(
+                        //     icon: Container(
+                        //         margin:
+                        //         EdgeInsets.fromLTRB(30.h, 12.v, 20.h, 12.v),
+                        //         child: CustomImageView(
+                        //             imagePath:
+                        //             ImageConstant.imgEvaarrowdownfill,
+                        //             height: 20.adaptSize,
+                        //             width: 20.adaptSize)),
+                        //     hintText: "# of bedrooms *",
+                        //     hintStyle: CustomTextStyles.bodyLargeBluegray700,
+                        //     items: dropdownItemList1,
+                        //     borderDecoration: DropDownStyleHelper.fillOnPrimary,
+                        //     filled: true,
+                        //     fillColor:
+                        //     theme.colorScheme.onPrimary.withOpacity(1),
+                        //     onChanged: (value) {}),
                         SizedBox(height: 32.v),
                         _buildSubmit(context)
                       ])))
@@ -1004,7 +1004,7 @@ class ListPropertyScreen extends StatelessWidget {
               child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 93.h),
                   child: Column(mainAxisSize: MainAxisSize.min, children: [
-                    Text("Contact number: 9999999999",
+                    Text(" ",
                         style: CustomTextStyles.bodyMediumGray900),
                     SizedBox(height: 12.v),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [

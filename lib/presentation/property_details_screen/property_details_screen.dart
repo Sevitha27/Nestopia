@@ -8,6 +8,8 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_icon_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/material.dart';
 
 // ignore_for_file: must_be_immutable
 class PropertyDetailsScreen extends StatelessWidget {
@@ -48,10 +50,10 @@ class PropertyDetailsScreen extends StatelessWidget {
                           SizedBox(height: 24.v),
                           // _buildSaveButton(context),
                           // SizedBox(height: 18.v),
-                          Text("The Metropolitan Manor",
+                          Text("Pearl River",
                               style: theme.textTheme.titleMedium),
                           SizedBox(height: 16.v),
-                          Text("Jayanagar,Bengaluru",
+                          Text("Suryanagr,Bengaluru",
                               style: theme.textTheme.bodyLarge),
                           SizedBox(height: 28.v),
                           Row(
@@ -64,7 +66,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     width: 16.adaptSize),
                                 Padding(
                                     padding: EdgeInsets.only(left: 8.h),
-                                    child: Text("1bedroom",
+                                    child: Text("2 bedroom",
                                         style: CustomTextStyles
                                             .bodyMediumGray900)),
                                 Container(
@@ -84,7 +86,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                           Padding(
                                               padding:
                                               EdgeInsets.only(left: 8.h),
-                                              child: Text("1 bath",
+                                              child: Text("2 bath",
                                                   style: CustomTextStyles
                                                       .bodyMediumGray900))
                                         ]))
@@ -132,15 +134,14 @@ class PropertyDetailsScreen extends StatelessWidget {
                                         crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                         children: [
-                                          Text("TV",
+                                          Text("1. TV",
                                               style: theme.textTheme.bodyLarge),
                                           SizedBox(height: 4.v),
                                           Text("Flatscreen TV",
                                               style: theme.textTheme.bodySmall)
                                         ]),
                                     CustomImageView(
-                                        imagePath:
-                                        ImageConstant.imgMdiTelevision,
+                                        imagePath: 'assets/images/tv.jpg',
                                         height: 32.adaptSize,
                                         width: 32.adaptSize,
                                         margin: EdgeInsets.only(
@@ -150,14 +151,14 @@ class PropertyDetailsScreen extends StatelessWidget {
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Fireplace",
-                                  image: ImageConstant.imgMdiFireplace)),
+                                  text: "2. Fireplace",
+                                  image: 'assets/images/fire.png')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Phone",
-                                  image: ImageConstant.imgMdiPhoneClassic)),
+                                  text: "3. Phone",
+                                  image: 'assets/images/phone.webp')),
                           SizedBox(height: 8.v),
                           Row(
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -167,7 +168,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     crossAxisAlignment:
                                     CrossAxisAlignment.start,
                                     children: [
-                                      Text("Work desk",
+                                      Text("4.Work desk",
                                           style: theme.textTheme.bodyLarge),
                                       SizedBox(height: 5.v),
                                       Align(
@@ -177,7 +178,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                     ]),
                                 CustomImageView(
                                     imagePath:
-                                    ImageConstant.imgMdiDesktopMacDashboard,
+                                    'assets/images/work desk.png',
                                     height: 32.adaptSize,
                                     width: 32.adaptSize,
                                     margin: EdgeInsets.only(
@@ -187,50 +188,50 @@ class PropertyDetailsScreen extends StatelessWidget {
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Fridge",
-                                  image: ImageConstant.imgMdiFridge)),
+                                  text: "5. Fridge",
+                                  image: 'assets/images/fridge.png')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Kettle",
-                                  image: ImageConstant.imgMdiKettle)),
+                                  text: "6. Kettle",
+                                  image: 'assets/images/kettle.jpg')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Coffee Maker",
-                                  image: ImageConstant.imgMdiKettle)),
+                                  text: "7. Coffee Maker",
+                                  image: 'assets/images/coffee-machine-icon.jpg')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Dishes",
-                                  image: ImageConstant.imgMdiPotSteam)),
+                                  text: "8. Dishes",
+                                  image: 'assets/images/dishes.png')),
                           SizedBox(height: 20.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Washing Machine",
-                                  image: ImageConstant.imgMdiKettle)),
+                                  text: "9. Washing Machine",
+                                  image: 'assets/images/washing machine.jpg')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Dryer",
-                                  image: ImageConstant.imgMdiTumbleDryer)),
+                                  text: "10. Dryer",
+                                  image:'assets/images/dryer.png')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Iron",
-                                  image: ImageConstant.imgMdiCurling)),
+                                  text: "11. Iron",
+                                  image: 'assets/images/iron.webp')),
                           SizedBox(height: 8.v),
                           Padding(
                               padding: EdgeInsets.symmetric(horizontal: 87.h),
                               child: _buildPhoneRow(context,
-                                  text: "Wardrobe",
-                                  image: ImageConstant.imgMdiWardrobe)),
+                                  text: "12. Wardrobe",
+                                  image: 'assets/images/wardrobe.png')),
                           SizedBox(height: 80.v),
                           Text("Location",
                               style: theme.textTheme.headlineLarge),
@@ -242,39 +243,39 @@ class PropertyDetailsScreen extends StatelessWidget {
                           SizedBox(height: 37.v),
                           Text("House rules",
                               style: CustomTextStyles.titleLargeBlack900),
-                          SizedBox(height: 15.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 100.h),
-                                  child: Row(children: [
-                                    CustomImageView(
-                                        imagePath: ImageConstant
-                                            .imgEvaClockFillBlack900,
-                                        height: 20.adaptSize,
-                                        width: 20.adaptSize),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 12.h),
-                                        child: Text("Checkin time",
-                                            style: theme.textTheme.bodyLarge))
-                                  ]))),
-                          SizedBox(height: 7.v),
-                          Align(
-                              alignment: Alignment.centerLeft,
-                              child: Padding(
-                                  padding: EdgeInsets.only(left: 100.h),
-                                  child: Row(children: [
-                                    CustomImageView(
-                                        imagePath: ImageConstant
-                                            .imgEvaClockFillBlack900,
-                                        height: 20.adaptSize,
-                                        width: 20.adaptSize),
-                                    Padding(
-                                        padding: EdgeInsets.only(left: 12.h),
-                                        child: Text("Checkout time",
-                                            style: theme.textTheme.bodyLarge))
-                                  ]))),
-                          SizedBox(height: 7.v),
+                          // SizedBox(height: 15.v),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 100.h),
+                          //         child: Row(children: [
+                          //           CustomImageView(
+                          //               imagePath: ImageConstant
+                          //                   .imgEvaClockFillBlack900,
+                          //               height: 20.adaptSize,
+                          //               width: 20.adaptSize),
+                          //           Padding(
+                          //               padding: EdgeInsets.only(left: 12.h),
+                          //               child: Text("Checkin time:9 am",
+                          //                   style: theme.textTheme.bodyLarge))
+                          //         ]))),
+                          // SizedBox(height: 7.v),
+                          // Align(
+                          //     alignment: Alignment.centerLeft,
+                          //     child: Padding(
+                          //         padding: EdgeInsets.only(left: 100.h),
+                          //         child: Row(children: [
+                          //           CustomImageView(
+                          //               imagePath: ImageConstant
+                          //                   .imgEvaClockFillBlack900,
+                          //               height: 20.adaptSize,
+                          //               width: 20.adaptSize),
+                          //           Padding(
+                          //               padding: EdgeInsets.only(left: 12.h),
+                          //               child: Text("Checkout time",
+                          //                   style: theme.textTheme.bodyLarge))
+                          //         ]))),
+                          // SizedBox(height: 7.v),
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
@@ -288,7 +289,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                         margin: EdgeInsets.only(bottom: 1.v)),
                                     Padding(
                                         padding: EdgeInsets.only(left: 12.h),
-                                        child: Text("No smoking",
+                                        child: Text("  No smoking",
                                             style: theme.textTheme.bodyLarge))
                                   ]))),
                           SizedBox(height: 6.v),
@@ -305,7 +306,7 @@ class PropertyDetailsScreen extends StatelessWidget {
                                         margin: EdgeInsets.only(bottom: 1.v)),
                                     Padding(
                                         padding: EdgeInsets.only(left: 12.h),
-                                        child: Text("No pets",
+                                        child: Text("  No pets",
                                             style: theme.textTheme.bodyLarge))
                                   ]))),
                           SizedBox(height: 6.v),
@@ -410,7 +411,7 @@ class PropertyDetailsScreen extends StatelessWidget {
         width: double.maxFinite,
         child: Stack(alignment: Alignment.center, children: [
           CustomImageView(
-              imagePath: ImageConstant.img1,
+              imagePath: 'assets/images/pearl_homes.jpg',
               height: 440.v,
               width: 375.h,
               radius: BorderRadius.circular(20.h),
