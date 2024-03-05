@@ -232,12 +232,12 @@ class PropertyDetailsScreen extends StatelessWidget {
                               child: _buildPhoneRow(context,
                                   text: "12. Wardrobe",
                                   image: 'assets/images/wardrobe.png')),
-                          SizedBox(height: 80.v),
-                          Text("Location",
-                              style: theme.textTheme.headlineLarge),
-                          SizedBox(height: 39.v),
-                          _buildMap(context),
-                          SizedBox(height: 83.v),
+                          // SizedBox(height: 80.v),
+                          // Text("Location",
+                          //     style: theme.textTheme.headlineLarge),
+                          // SizedBox(height: 39.v),
+                          // _buildMap(context),
+                           SizedBox(height: 83.v),
                           Text("Policy detail",
                               style: theme.textTheme.headlineLarge),
                           SizedBox(height: 37.v),
@@ -394,15 +394,15 @@ class PropertyDetailsScreen extends StatelessWidget {
   }*/
 
   /// Section Widget
-  Widget _buildFirstScreen(BuildContext context) {
-    return CustomElevatedButton(
-        height: 26.v,
-        width: 47.h,
-        text: "1/10",
-        buttonStyle: CustomButtonStyles.fillOnPrimary,
-        buttonTextStyle: CustomTextStyles.bodyMediumGray900,
-        alignment: Alignment.centerRight);
-  }
+  // Widget _buildFirstScreen(BuildContext context) {
+  //   return CustomElevatedButton(
+  //       height: 26.v,
+  //       width: 47.h,
+  //       text: "1/10",
+  //       buttonStyle: CustomButtonStyles.fillOnPrimary,
+  //       buttonTextStyle: CustomTextStyles.bodyMediumGray900,
+  //       alignment: Alignment.centerRight);
+  // }
 
   /// Section Widget
   Widget _buildFirstScreen1(BuildContext context) {
@@ -431,8 +431,8 @@ class PropertyDetailsScreen extends StatelessWidget {
                             decoration: IconButtonStyleHelper.fillPrimaryTL22,
                             child: CustomImageView(
                                 imagePath: ImageConstant.imgArrowDown)),
-                        SizedBox(height: 338.v),
-                        _buildFirstScreen(context)
+                        // SizedBox(height: 338.v),
+                        // _buildFirstScreen(context)
                       ])))
         ]));
   }

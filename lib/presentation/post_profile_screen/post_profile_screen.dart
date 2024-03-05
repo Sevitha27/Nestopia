@@ -8,6 +8,18 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_phone_number.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
+
+
+import 'package:country_pickers/country.dart';
+import 'package:country_pickers/country_pickers.dart';
+import 'package:flutter/material.dart';
+import 'package:sevitha_s_application2/core/app_export.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_leading_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
+import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
+import 'package:sevitha_s_application2/widgets/custom_phone_number.dart';
+import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
 import 'package:sevitha_s_application2/core/app_export.dart';
 import '../list_property_screen/widgets/one_item_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -28,7 +40,6 @@ import 'package:sevitha_s_application2/widgets/app_bar/custom_app_bar.dart';
 import 'package:sevitha_s_application2/widgets/custom_elevated_button.dart';
 import 'package:sevitha_s_application2/widgets/custom_search_view.dart';
 import 'package:sevitha_s_application2/widgets/custom_text_form_field.dart';
-
 // ignore_for_file: must_be_immutable
 class PostProfileScreen extends StatelessWidget {
   PostProfileScreen({Key? key}) : super(key: key);
@@ -70,7 +81,18 @@ class PostProfileScreen extends StatelessWidget {
     return SafeArea(
         child: Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: _buildAppBar(context),
+            appBar: AppBar(
+              
+              title: Text('Nestopia'),
+              centerTitle: true,
+              actions: [
+                AppbarTrailingImage(
+                  onTapNestopia: () {
+                    Navigator.pushNamed(context, '/homepage_screen'); // Navigate to homepage
+                  },
+                ),
+              ],
+            ),
             body: Form(
                 key: _formKey,
                 child: SingleChildScrollView(
@@ -96,7 +118,7 @@ class PostProfileScreen extends StatelessWidget {
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
-                                  padding: EdgeInsets.only(left: 28.h),
+                                  padding: EdgeInsets.only(left: 35.h),
                                   child: Row(children: [
                                     Container(
                                         height: 28.adaptSize,
@@ -115,16 +137,19 @@ class PostProfileScreen extends StatelessWidget {
                           Align(
                               alignment: Alignment.centerLeft,
                               child: Padding(
-                                  padding: EdgeInsets.only(left: 28.h),
+                                  padding: EdgeInsets.only(left: 35.h),
                                   child: Row(children: [
-                                    CustomImageView(
-                                        imagePath: ImageConstant.imgMobile,
-                                        height: 33.v,
-                                        width: 32.h),
+                                    Container(
+                                        height: 28.adaptSize,
+                                        width: 28.adaptSize,
+                                        decoration: BoxDecoration(
+                                            color: appTheme.blueGray50,
+                                            borderRadius:
+                                                BorderRadius.circular(14.h))),
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            left: 8.h, top: 6.v, bottom: 6.v),
-                                        child: Text(" ",
+                                            left: 10.h, top: 4.v, bottom: 3.v),
+                                        child: Text(" You are a PG owner",
                                             style: theme.textTheme.bodyLarge))
                                   ]))),
                           SizedBox(height: 20.v),
@@ -154,32 +179,17 @@ class PostProfileScreen extends StatelessWidget {
                           _buildUploadButton(context),
                           SizedBox(height: 12.v),
                           _buildFooter(context)
-                        ]))))));
+                        ]))))
+                        ));
   }
 
-  /// Section Widget
-  PreferredSizeWidget _buildAppBar(BuildContext context) {
-    return CustomAppBar(
-        leadingWidth: 62.h,
-        leading: AppbarLeadingImage(
-            imagePath: ImageConstant.imgCalendar,
-            margin: EdgeInsets.only(left: 16.h, top: 12.v, bottom: 12.v),
-            onTap: () {
-              onTapCalendar(context);
-            }),
-        actions: [
-          AppbarTrailingImage(
-              imagePath: ImageConstant.imgMegaphone,
-              margin: EdgeInsets.symmetric(horizontal: 16.h, vertical: 24.v), onTapNestopia: () {  },)
-        ],
-        styleType: Style.bgFill);
-  }
 
-  /// Section Widget
+
+
   Widget _buildOneRow(BuildContext context) {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 28.h),
-        child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+        child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, children: [
           Container(
               height: 28.adaptSize,
               width: 28.adaptSize,

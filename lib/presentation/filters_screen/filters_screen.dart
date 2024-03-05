@@ -398,7 +398,14 @@ class _FiltersScreenState extends State<FiltersScreen> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          CustomOutlinedButton(width: 99.h, text: "Back"),
+           CustomElevatedButton(
+            width: 99.h,
+            text: "Back",
+            buttonStyle: CustomButtonStyles.fillPrimary,
+            onPressed: () {
+              onTapCalendar(context);
+            },
+          ),
           CustomElevatedButton(
             width: 130.h,
             text: "Continue",
