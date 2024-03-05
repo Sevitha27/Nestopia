@@ -186,7 +186,7 @@ class RentScreen extends StatelessWidget {
         child:
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           CustomImageView(
-              imagePath: ImageConstant.imgRectangle222182x100,
+              imagePath: 'assets/images/pearl_homes.jpg',
               height: 182.v,
               width: 100.h,
               radius: BorderRadius.only(topLeft: Radius.circular(20.h))),
@@ -195,7 +195,7 @@ class RentScreen extends StatelessWidget {
               child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("The Loft Life", style: theme.textTheme.titleMedium),
+                    Text("Pearl River", style: theme.textTheme.titleMedium),
                     SizedBox(height: 13.v),
                     _buildBedroomBath(context,
                         bedroomCount: "2 bedroom",
